@@ -4,6 +4,8 @@
  <h2 align="center">Magnesium / Rubidium-Extras i18n</h2>
  <p align="center"></p>
 
+English / [简体中文](README.md) / [Original README(English)](README-original.txt)
+
 ### WHAT IS THIS?
 Magnesium / Rubidium Extras do NOT SUPPORT localization (hardcoded), this Fork modifies the code to support localization.
 
