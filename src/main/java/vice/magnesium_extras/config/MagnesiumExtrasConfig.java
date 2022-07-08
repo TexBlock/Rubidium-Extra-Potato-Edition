@@ -89,11 +89,11 @@ public class MagnesiumExtrasConfig
             maxEntityRenderDistanceY = b.define(I18n.get("mg_extra.entity_distance.max_entity_render_dis_Y.title"), 32);
         });
 
-        builder.Block(I18n.get("mg_extra.zoom.option.title"), b -> {
+        builder.Block(I18n.get("mg_extra.zoom.option.name"), b -> {
             lowerZoomSensitivity = b.define(I18n.get("mg_extra.zoom.lower_sensitivity.title"), true);
             zoomScrolling = b.define(I18n.get("mg_extra.zoom.scrolling.title"), true);
             zoomTransition = b.define(I18n.get("mg_extra.zoom.transition.title"), ZoomTransitionOptions.SMOOTH.toString());
-            zoomMode = b.define(I18n.get("mg_extra.zoom.mode.title"), ZoomModes.HOLD.toString());
+            zoomMode = b.define(I18n.get("mg_extra.zoom.keybind_mode.title"), ZoomModes.HOLD.toString());
             cinematicCameraMode = b.define(I18n.get("mg_extra.zoom.cinematic_cam_mode.title"), CinematicCameraOptions.OFF.toString());
             zoomOverlay = b.define(I18n.get("mg_extra.zoom.overlay.title"), true);
             //zoomValues = b.define(I18n.get("mg_extra.zoom.values.title"), new ZoomValues());
