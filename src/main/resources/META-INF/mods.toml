@@ -1,6 +1,7 @@
 modLoader="javafml" #mandatory
 loaderVersion="[36,)" #mandatory
 license="LGPL"
+
 [[mods]] #mandatory
 modId="magnesium_extras" #mandatory
 version="${file.jarVersion}" #mandatory
@@ -8,13 +9,17 @@ displayName="Magnesium Extras" #mandatory
 logoFile= "icon.png" #optional
 credits="TeamDeusVult" #optional
 authors="TexTrue,TexStudio-i18nProject" #optional
-description='''Magnesium-Extras Mod'''
+description='''
+Magnesium-Extras Mod
+'''
+
 [[dependencies.magnesium_extras]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="[36,)" #mandatory
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.magnesium_extras]]
     modId="minecraft"
     mandatory=true
