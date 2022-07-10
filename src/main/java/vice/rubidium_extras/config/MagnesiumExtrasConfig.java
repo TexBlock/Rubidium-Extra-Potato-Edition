@@ -5,6 +5,7 @@ import com.electronwill.nightconfig.core.io.WritingMode;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraftforge.common.ForgeConfigSpec;
 import java.nio.file.Path;
 
@@ -67,60 +68,60 @@ public class MagnesiumExtrasConfig
 
     static
     {
-        var builder = new ConfigBuilder("Dynamic Lights Settings");
+        var builder = new ConfigBuilder(I18n.get("rb_extra.misc.dynamic_light.name"));
 
-        builder.Block("Misc", b -> {
-            cloudHeight = b.define("Cloud Height [Raw, Default 256]", 256);
-            fadeInQuality =  b.define("Chunk Fade In Quality (OFF, FAST, FANCY)", "FANCY");
-            fog = b.define("Render Fog", true);
-            hideJEI = b.define("Hide JEI Until Searching", true);
-            fullScreenMode = b.defineEnum("Use Borderless Fullscreen", FullscreenMode.FULLSCREEN);
+        builder.Block(I18n.get("rb_extra.misc.page.name"), b -> {
+            cloudHeight = b.define(I18n.get("rb_extra.misc.cloud_height.name"), 256);
+            fadeInQuality =  b.define(I18n.get("rb_extra.chunk_quality.name"), "FANCY");
+            fog = b.define(I18n.get("rb_extra.render_fog.name"), true);
+            hideJEI = b.define(I18n.get("rb_extra.misc.hide_jei_until_searching.name"), true);
+            fullScreenMode = b.defineEnum(I18n.get("rb_extra.misc.full_screen_mode.name"), FullscreenMode.FULLSCREEN);
         });
 
-        builder.Block("FPS Counter", b -> {
-            fpsCounterMode = b.define("Display FPS Counter (OFF, SIMPLE, ADVANCED)", "ADVANCED");
-            fpsCounterPosition = b.define("FPS Counter Distance", 12);
+        builder.Block(I18n.get("rb_extra.fps_counter.object.name"), b -> {
+            fpsCounterMode = b.define(I18n.get("rb_extra.fps_counter.mode.name"), "ADVANCED");
+            fpsCounterPosition = b.define(I18n.get("rb_extra.fps_counter.position.name"), 12);
         });
 
-        builder.Block("Entity Distance", b -> {
-            enableDistanceChecks = b.define("Enable Max Distance Checks", true);
+        builder.Block(I18n.get("rb_extra.entity_dis.option.name"), b -> {
+            enableDistanceChecks = b.define(I18n.get("rb_extra.entity_dis.enable_dis_checks.name"), true);
 
-            maxTileEntityRenderDistanceSquare = b.define("(TileEntity) Max Horizontal Render Distance [Squared, Default 64^2]", 4096);
-            maxTileEntityRenderDistanceY = b.define("(TileEntity) Max Vertical Render Distance [Raw, Default 32]", 32);
+            maxTileEntityRenderDistanceSquare = b.define(I18n.get("rb_extra.entity_dis.max_TE_render_dis_S.name"), 4096);
+            maxTileEntityRenderDistanceY = b.define(I18n.get("rb_extra.entity_distance.max_TE_render_dis_Y.name"), 32);
 
-            maxEntityRenderDistanceSquare = b.define("(Entity) Max Horizontal Render Distance [Squared, Default 64^2]", 4096);
-            maxEntityRenderDistanceY = b.define("(Entity) Max Vertical Render Distance [Raw, Default 32]", 32);
+            maxEntityRenderDistanceSquare = b.define(I18n.get("rb_extra.entity_distance.max_entity_render_dis_S.name"), 4096);
+            maxEntityRenderDistanceY = b.define(I18n.get("rb_extra.entity_distance.max_entity_render_dis_Y.name"), 32);
         });
 
         builder.Block("Zoom", b -> {
-            lowerZoomSensitivity = b.define("Lower Zoom Sensitivity", true);
-            zoomScrolling = b.define("Zoom Scrolling Enabled", true);
-            zoomTransition = b.define("Zoom Transition Mode (OFF, LINEAR, SMOOTH)", ZoomTransitionOptions.SMOOTH.toString());
-            zoomMode = b.define("Zoom Transition Mode (TOGGLE, HOLD, PERSISTENT)", ZoomModes.HOLD.toString());
-            cinematicCameraMode = b.define("Cinematic Camera Mode (OFF, VANILLA, MULTIPLIED)", CinematicCameraOptions.OFF.toString());
-            zoomOverlay = b.define("Zoom Overlay?", true);
+            lowerZoomSensitivity = b.define(I18n.get("rb_extra.zoom.lower_zoom_sensitivity.name"), true);
+            zoomScrolling = b.define(I18n.get("rb_extra.zoom.scrolling_enable.name"), true);
+            zoomTransition = b.define(I18n.get("rb_extra.zoom.transition_mode.name"), ZoomTransitionOptions.SMOOTH.toString());
+            zoomMode = b.define(I18n.get("rb_extra.zoom.keybind_mode.name"), ZoomModes.HOLD.toString());
+            cinematicCameraMode = b.define(I18n.get("rb_extra.zoom.cinematic_cam_mode_.name"), CinematicCameraOptions.OFF.toString());
+            zoomOverlay = b.define(I18n.get("rb_extra.zoom.overlay_.name"), true);
             //zoomValues = b.define("Zoom Advanced Values", new ZoomValues());
         });
 
-        builder.Block("True Darkness", b -> {
-            trueDarknessEnabled = b.define("Use True Darkness", true);
-            darknessOption = b.defineEnum("Darkness Setting (PITCH_BLACK, REALLY_DARK, DARK, DIM)", DarknessOption.DARK);
+        builder.Block(I18n.get("rb_extra.ture_darkness.option.name"), b -> {
+            trueDarknessEnabled = b.define(I18n.get("rb_extra.ture_darkness.enable_switch.name"), true);
+            darknessOption = b.defineEnum(I18n.get("rb_extra.ture_darkness.setting.name"), DarknessOption.DARK);
 
             builder.Block("Advanced", b2 -> {
-                blockLightOnly = b2.define("Only Effect Block Lighting", false);
-                ignoreMoonPhase = b2.define("Ignore Moon Light", false);
-                minimumMoonLevel = b2.defineInRange("Minimum Moon Brightness (0->1)", 0, 0, 1d);
-                maximumMoonLevel = b2.defineInRange("Maximum Moon Brightness (0->1)", 0.25d, 0, 1d);
+                blockLightOnly = b2.define(I18n.get("rb_extra.block_light_only.name"), false);
+                ignoreMoonPhase = b2.define(I18n.get("rb_extra.ignore_moon_light.name"), false);
+                minimumMoonLevel = b2.defineInRange(I18n.get("rb_extra.max_moon_light.name"), 0, 0, 1d);
+                maximumMoonLevel = b2.defineInRange(I18n.get("rb_extra.mini_moon_light.name"), 0.25d, 0, 1d);
             });
 
-            builder.Block("Dimension Settings", b2 -> {
-                darkOverworld = b2.define("Dark Overworld?", true);
-                darkDefault = b2.define("Dark By Default?", false);
-                darkNether = b2.define("Dark Nether?", false);
-                darkNetherFogConfigured = b2.defineInRange("Dark Nether Fog Brightness (0->1)", .5, 0, 1d);
-                darkEnd = b2.define("Dark End?", false);
-                darkEndFogConfigured = b.defineInRange("Dark End Fog Brightness (0->1)", 0, 0, 1d);
-                darkSkyless = b2.define("Dark If No Skylight?", false);
+            builder.Block(I18n.get("rb_extra.dim_setting.name"), b2 -> {
+                darkOverworld = b2.define(I18n.get("rb_extra.dark_overworld.name"), true);
+                darkDefault = b2.define(I18n.get("rb_extra.dark_default.name"), false);
+                darkNether = b2.define(I18n.get("rb_extra.dark_nether.name"), false);
+                darkNetherFogConfigured = b2.defineInRange(I18n.get("rb_extra.dark_nether_fog_configured.name"), .5, 0, 1d);
+                darkEnd = b2.define(I18n.get("rb_extra.dark_end.name"), false);
+                darkEndFogConfigured = b.defineInRange(I18n.get("rb_extra.dark_end_fog_configured.name"), 0, 0, 1d);
+                darkSkyless = b2.define(I18n.get("rb_extra.dark_skylight.name"), false);
             });
         });
 
@@ -137,9 +138,9 @@ public class MagnesiumExtrasConfig
 
     public static enum Complexity implements TextProvider
     {
-        OFF("Off"),
-        SIMPLE("Simple"),
-        ADVANCED("Advanced");
+        OFF(I18n.get("rb_extra.options.off")),
+        SIMPLE(I18n.get("rb_extra.options.simple")),
+        ADVANCED(I18n.get("rb_extra.options.advanced"));
 
         private final String name;
 
@@ -154,9 +155,9 @@ public class MagnesiumExtrasConfig
 
     public static enum Quality implements TextProvider
     {
-        OFF("Off"),
-        FAST("Fast"),
-        FANCY("Fancy");
+        OFF(I18n.get("rb_extra.options.off")),
+        FAST(I18n.get("rb_extra.options.fast")),
+        FANCY(I18n.get("rb_extra.options.fancy"));
 
         private final String name;
 

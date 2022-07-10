@@ -25,6 +25,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import vice.rubidium_extras.config.MagnesiumExtrasConfig;
 import vice.rubidium_extras.mixins.BorderlessFullscreen.MainWindowAccessor;
+import net.minecraft.client.resources.language.I18n;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,12 +58,12 @@ public class SodiumGameOptionsMixin
 //        );
 
         Option<MagnesiumExtrasConfig.Complexity> displayFps =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Complexity.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Display FPS"))
-                .setTooltip(Component.nullToEmpty("Displays the current FPS. Advanced mode also displays minimum FPS, as well as 15 second average FPS, which are more useful for judging performance."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.display_fps.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.display_fps.tooltip")))
                 .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Complexity.class, new Component[] {
-                        Component.nullToEmpty("Off"),
-                        Component.nullToEmpty("Simple"),
-                        Component.nullToEmpty("Advanced")
+                        Component.nullToEmpty(I18n.get("rb_extra.options.off")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.simple")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.advanced"))
                 }))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fpsCounterMode.set(value.toString()),
@@ -72,10 +73,10 @@ public class SodiumGameOptionsMixin
 
 
         Option<Integer> displayFpsPos = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("FPS Display Position"))
-                .setTooltip(Component.nullToEmpty("Offsets the FPS display a few pixels"))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.position_fps.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.position_fps.tooltip")))
                 .setControl((option) -> {
-                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.translateVariable("Pixels"));
+                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.pixels")));
                 })
                 .setImpact(OptionImpact.LOW)
                 .setBinding(
@@ -92,8 +93,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> totalDarkness = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("True Darkness"))
-                .setTooltip(Component.nullToEmpty("Makes the rest of the world more realistically dark. Does not effect daytime or torch light."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.ture_darkness.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.ture_darkness.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.trueDarknessEnabled.set(value),
@@ -102,13 +103,13 @@ public class SodiumGameOptionsMixin
                 .build();
 
         Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
-                .setName(Component.nullToEmpty("True Darkness Mode"))
-                .setTooltip(Component.nullToEmpty("Controls how dark is considered true darkness."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.ture_darkness_mode.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.ture_darkness_mode.tooltip")))
                 .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new Component[] {
-                        Component.nullToEmpty("Pitch Black"),
-                        Component.nullToEmpty("Really Dark"),
-                        Component.nullToEmpty("Dark"),
-                        Component.nullToEmpty("Dim")
+                        Component.nullToEmpty(I18n.get("rb_extra.options.pitch_black")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.really_dark")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.dark")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.dim"))
                 }))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
@@ -140,8 +141,8 @@ public class SodiumGameOptionsMixin
 //                .build();
 
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Enable fog"))
-                .setTooltip(Component.nullToEmpty("Toggles off all fog in the overworld."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.fog.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.fog.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.fog.set(value),
@@ -150,8 +151,8 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Boolean> hideJEI = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Hide JEI Until Searching"))
-                .setTooltip(Component.nullToEmpty("Toggles off JEI items unless you search for something. Press space to search for everything."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.hideJEI.set(value),
@@ -160,9 +161,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Cloud Height"))
-                .setTooltip(Component.nullToEmpty("Raises cloud height."))
-                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.cloud_height.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.cloud_height.tooltip")))
+                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
                 .setBinding(
                         (options, value) -> {
                             MagnesiumExtrasConfig.cloudHeight.set(value);
@@ -183,8 +184,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> enableDistanceChecks = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Enable Max Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Toggles off entity culling."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.enable_max_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.enable_max_entity_distance.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.enableDistanceChecks.set(value),
@@ -204,9 +205,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Max Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms."))
-                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.max_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.max_entity_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.set(value * value),
                         (options) ->  Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.get()))))
@@ -214,9 +215,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Vertical Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance."))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.vertical_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.vertical_entity_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.get())
@@ -236,9 +237,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Max Tile Distance"))
-                .setTooltip(Component.nullToEmpty("Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines."))
-                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.max_tile_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.max_tile_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.set(value * value),
                         (options) -> Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.get()))))
@@ -246,9 +247,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Vertical Tile Distance"))
-                .setTooltip(Component.nullToEmpty("Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance."))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.vertical_tile_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.vertical_tile_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.get())
@@ -274,12 +275,12 @@ public class SodiumGameOptionsMixin
     private static void InjectGeneral(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {
         OptionImpl<Options, MagnesiumExtrasConfig.FullscreenMode> fullscreenMode = OptionImpl.createBuilder( MagnesiumExtrasConfig.FullscreenMode.class, vanillaOpts)
-                .setName(Component.nullToEmpty("Fullscreen Mode"))
-                .setTooltip(Component.nullToEmpty("Windowed - the game will display in a small window.\nBorderless - the game will be fullscreened, and locked to your monitor's refresh rate, but allow you to tab out easily.\nFullscreen - the game will display in native fullscreen mode."))
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.full_screen_mode.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.full_screen_mode.tooltip")))
                 .setControl((opt) -> new CyclingControl<>(opt, MagnesiumExtrasConfig.FullscreenMode.class, new Component[] {
-                        Component.nullToEmpty("Windowed"),
-                        Component.nullToEmpty("Borderless"),
-                        Component.nullToEmpty("Fullscreen")
+                        Component.nullToEmpty(I18n.get("rb_extra.options.windowed")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.borderless")),
+                        Component.nullToEmpty(I18n.get("rb_extra.options.fullscreen"))
                 }))
                 .setBinding(
                         (opts, value) -> {
@@ -303,7 +304,7 @@ public class SodiumGameOptionsMixin
                         (opts) -> MagnesiumExtrasConfig.fullScreenMode.get())
                 .build();
 
-        ReplaceOption(groups, "Fullscreen", fullscreenMode);
+        ReplaceOption(groups, I18n.get("rb_extra.options.fullscreen"), fullscreenMode);
     }
 
 
@@ -330,6 +331,6 @@ public class SodiumGameOptionsMixin
 
     @ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "sodium.options.pages.advanced"))
     private static String ChangeCategoryName(String old) {
-        return "Extras";
+        return I18n.get("rb_extra.page.extras");
     }
 }
