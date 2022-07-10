@@ -17,8 +17,8 @@
   "rb_extra.options.windowed": "Windowed",
   "rb_extra.options.borderless": "Borderless",
   "rb_extra.options.fullscreen": "Fullscreen",
-  "rb_extra.options.unit.pixels": "% Pixels",
-  "rb_extra.options.unit.blocks": "% Blocks",
+  "rb_extra.options.unit.pixels": "Pixels",
+  "rb_extra.options.unit.blocks": "Blocks",
 
   "rb_extra.misc.page.name": "Misc",
   "rb_extra.page.zoom": "Zoom",
