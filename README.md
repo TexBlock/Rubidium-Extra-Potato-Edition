@@ -18,6 +18,8 @@ Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代
 ### 链接
 原Repo : [TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
 
-镁及其附属汉化[停更]：[Molarczsq/Magnesium-should-be-in-Chinese](https://github.com/Molarczsq/Magnesium-should-be-in-Chinese)
+Magnesium / Rubidium DynamicLights 本地化 : [ForgeModi18n/MgRbDynamicLights-i18n](https://github.com/ForgeModi18n/MgRbDynamicLights-i18n)
 
-铷及其附属汉化[WIP(?)]：[Molarczsq/Rubidium-Also-needs-Chinese](https://github.com/Molarczsq/Rubidium-Also-needs-Chinese)
+镁及其附属汉化[停更] : [Molarczsq/Magnesium-should-be-in-Chinese](https://github.com/Molarczsq/Magnesium-should-be-in-Chinese)
+
+铷及其附属汉化[WIP(?)] : [Molarczsq/Rubidium-Also-needs-Chinese](https://github.com/Molarczsq/Rubidium-Also-needs-Chinese)

@@ -17,3 +17,5 @@ Magnesium / Rubidium Extras do NOT SUPPORT localization (hardcoded), this Fork m
 
 ### Link
 Original Repo：[TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
+
+Magnesium / Rubidium DynamicLights i18n : [ForgeModi18n/MgRbDynamicLights-i18n](https://github.com/ForgeModi18n/MgRbDynamicLights-i18n)
