@@ -9,8 +9,7 @@
 ### 这是干什么的？
 Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。翻译问题请到issues反馈。
 
-1.16.5 : [MagnesiumExtras-mc1.16.5_v1.3.2-i18n](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.16-v1.3.
-2-i18n)
+1.16.5 : [MagnesiumExtras-mc1.16.5_v1.3.2-i18n](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.16-v1.3.2-i18n)
 
 1.16.5 兼容 Rubidium : [RubidiumExtras-mc1.16.5_v1.3.2-Compatibility](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.16-v1.3.2-Compatibility)
 
