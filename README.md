@@ -1,6 +1,6 @@
 <p align="center">
- <img width="100px" src="ModIcon/Mg-Extra.png" align="center" alt="Magnesium-Extras Logo" />
- <img width="100px" src="ModIcon/Rb-Extra.png" align="center" alt="Rubidium-Extras Logo" />
+ <img width="100px" src="icon/Mg-Extra.png" align="center" alt="Magnesium-Extras Logo" />
+ <img width="100px" src="icon/Rb-Extra.png" align="center" alt="Rubidium-Extras Logo" />
  <h2 align="center">Magnesium / Rubidium-Extras i18n</h2>
  <p align="center"></p>
 
