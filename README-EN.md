@@ -11,6 +11,8 @@ Magnesium / Rubidium Extras do NOT SUPPORT localization (hardcoded), this Fork m
 
 1.16.5 : [MagnesiumExtras-mc1.16.5_v1.3.2-i18n](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.16-v1.3.2-i18n)
 
+1.16.5 Compatibility Rubidium : [RubidiumExtras-mc1.16.5_v1.3.2-Compatibility](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.16-v1.3.2-Compatibility)
+
 1.18.2 : [RubidiumExtras-mc1.18.2_v1.3.2-i18n](https://github.com/ForgeModi18n/MgRb-Extras-i18n/releases/tag/mc1.18-v1.3.2-i18n)
 
 ### Link
