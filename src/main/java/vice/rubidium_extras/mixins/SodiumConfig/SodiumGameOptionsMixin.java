@@ -48,12 +48,12 @@ public class SodiumGameOptionsMixin
     )
     private static void Inject(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {
-        groups.removeIf((optionGroup) ->
-            optionGroup
-                    .getOptions()
-                    .stream()
-                    .anyMatch((option) -> Objects.equals(option.getName(), I18n.get("mg_extra.display_fps.display.title")))
-        );
+//        groups.removeIf((optionGroup) ->
+//            optionGroup
+//                    .getOptions()
+//                    .stream()
+//                    .anyMatch((option) -> Objects.equals(option.getName(), I18n.get("mg_extra.display_fps.display.title")))
+//        );
 
         Option<MagnesiumExtrasConfig.Complexity> displayFps =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Complexity.class, sodiumOpts)
                 .setName(I18n.get("mg_extra.display_fps.display.title"))
