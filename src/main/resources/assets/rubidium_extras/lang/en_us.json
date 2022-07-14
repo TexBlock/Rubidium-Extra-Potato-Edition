@@ -44,7 +44,7 @@
   "rb_extra.enable_max_entity_distance.tooltip": "Toggles off entity culling.",
   "rb_extra.max_entity_distance.name": "Max Entity Distance",
   "rb_extra.max_entity_distance.tooltip": "Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms.",
-  "rb_extra.vertical_entity_distance.name": "Vertical Entity Distance",
+  "rb_extra.vertical_entity_distance.name": "Vertical Tile Distance",
   "rb_extra.vertical_entity_distance.tooltip": "Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance.",
   "rb_extra.max_tile_distance.name": "Max Tile Distance",
   "rb_extra.max_tile_distance.tooltip": "Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines.",

@@ -42,13 +42,13 @@
 
   "rb_extra.enable_max_entity_distance.name": "启用最大实体距离",
   "rb_extra.enable_max_entity_distance.tooltip": "关闭实体剔除。",
-  "rb_extra.max_entity_distance.name": "最大实体距离",
+  "rb_extra.max_entity_distance.name": "最大实体渲染距离",
   "rb_extra.max_entity_distance.tooltip": "隐藏并跳过渲染超出此范围的实体。这是巨大的性能提升，特别是在改造农场周围。",
-  "rb_extra.vertical_entity_distance.name": "垂直实体距离",
+  "rb_extra.vertical_entity_distance.name": "垂直实体渲染距离",
   "rb_extra.vertical_entity_distance.tooltip": "隐藏并跳过渲染此范围下的实体, 提高洞穴上方的性能. 理论上应设置为低于水平距离。",
-  "rb_extra.max_tile_distance.name": "最大方块渲染距离",
+  "rb_extra.max_tile_distance.name": "最大实体方块渲染距离",
   "rb_extra.max_tile_distance.tooltip": "隐藏此范围的实体方块. 巨大的性能提升, 尤其是在大型红石机器周围。",
-  "rb_extra.vertical_tile_distance.name": "垂直方块渲染距离",
+  "rb_extra.vertical_tile_distance.name": "垂直实体方块渲染距离",
   "rb_extra.vertical_tile_distance.tooltip": "将实体方块隐藏在这么多的方块下面，提高在山洞上面的性能（如果你的机器出于某种原因在山洞里）。这个值最好设置得比水平距离要低。",
 
   "rb_extra.lower_zoom_sensitivity.name": "较低的缩放灵敏度",
@@ -59,7 +59,7 @@
   "rb_extra.zoom_transition_mode.tooltip": "控制游戏如何从正常过渡到缩放, 关闭将即时过渡。",
   "rb_extra.zoom_keybind_mode.name": "缩放按键模式",
   "rb_extra.zoom_keybind_mode.tooltip": "按住 - 仅在快捷键按下时进行缩放。\n切换 - 锁定变焦，直到你再次按下快捷键\n保持 - 总是缩放，如果你出于某种原因想这样。",
-  "rb_extra.zoom_overlay.name": "缩放效果",
+  "rb_extra.zoom_overlay.name": "缩放晕影",
   "rb_extra.zoom_overlay.tooltip": "缩放时渲染晕影遮罩层。",
 
   "rb_extra.ture_darkness.name": "真实黑暗",
