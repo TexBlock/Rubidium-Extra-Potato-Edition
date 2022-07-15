@@ -52,13 +52,13 @@ public class SodiumGameOptionsMixin
 //            optionGroup
 //                    .getOptions()
 //                    .stream()
-//                    .anyMatch((option) -> Objects.equals(option.getName(), I18n.get("mg_extra.display_fps.display.title")))
+//                    .anyMatch((option) -> Objects.equals(option.getName(), I18n.get("ru_extras.display_fps.display.title")))
 //        );
 
         Option<MagnesiumExtrasConfig.Complexity> displayFps =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Complexity.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.display_fps.display.title"))
-                .setTooltip(I18n.get("mg_extra.display_fps.display.desc"))
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Complexity.class, new String[] { I18n.get("mg_extra.option.off"), I18n.get("mg_extra.option.simple"), I18n.get("mg_extra.option.advanced")}))
+                .setName(I18n.get("ru_extras.display_fps.display.title"))
+                .setTooltip(I18n.get("ru_extras.display_fps.display.desc"))
+                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Complexity.class, new String[] { I18n.get("ru_extras.option.off"), I18n.get("ru_extras.option.simple"), I18n.get("ru_extras.option.advanced")}))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fpsCounterMode.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.Complexity.valueOf(MagnesiumExtrasConfig.fpsCounterMode.get()))
@@ -67,10 +67,10 @@ public class SodiumGameOptionsMixin
 
 
         Option<Integer> displayFpsPos = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.display_fps.position.title"))
-                .setTooltip(I18n.get("mg_extra.display_fps.position.desc"))
+                .setName(I18n.get("ru_extras.display_fps.position.title"))
+                .setTooltip(I18n.get("ru_extras.display_fps.position.desc"))
                 .setControl((option) -> {
-                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.pixels")));
+                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.pixels")));
                 })
                 .setImpact(OptionImpact.LOW)
                 .setBinding(
@@ -87,8 +87,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> totalDarkness = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.ture_darkness.options.title"))
-                .setTooltip(I18n.get("mg_extra.ture_darkness.options.desc"))
+                .setName(I18n.get("ru_extras.ture_darkness.options.title"))
+                .setTooltip(I18n.get("ru_extras.ture_darkness.options.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.trueDarknessEnabled.set(value),
@@ -97,9 +97,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.ture_darkness.mode.title"))
-                .setTooltip(I18n.get("mg_extra.ture_darkness.mode.desc"))
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] { I18n.get("mg_extra.option.pitch_black"), I18n.get("mg_extra.option.really_dark"), I18n.get("mg_extra.option.dark"), I18n.get("mg_extra.option.dim")}))
+                .setName(I18n.get("ru_extras.ture_darkness.mode.title"))
+                .setTooltip(I18n.get("ru_extras.ture_darkness.mode.desc"))
+                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] { I18n.get("ru_extras.option.pitch_black"), I18n.get("ru_extras.option.really_dark"), I18n.get("ru_extras.option.dark"), I18n.get("ru_extras.option.dim")}))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
                         (opts) -> MagnesiumExtrasConfig.darknessOption.get())
@@ -116,9 +116,9 @@ public class SodiumGameOptionsMixin
 
 
         Option<MagnesiumExtrasConfig.Quality> fadeInQuality =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Quality.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.misc.chunk_fade_quality.title"))
-                .setTooltip(I18n.get("mg_extra.misc.chunk_fade_quality.desc"))
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] { I18n.get("mg_extra.option.off"), I18n.get("mg_extra.option.fast"), I18n.get("mg_extra.option.fancy")}))
+                .setName(I18n.get("ru_extras.misc.chunk_fade_quality.title"))
+                .setTooltip(I18n.get("ru_extras.misc.chunk_fade_quality.desc"))
+                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] { I18n.get("ru_extras.option.off"), I18n.get("ru_extras.option.fast"), I18n.get("ru_extras.option.fancy")}))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fadeInQuality.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.Quality.valueOf(MagnesiumExtrasConfig.fadeInQuality.get()))
@@ -126,8 +126,8 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.fog.title"))
-                .setTooltip(I18n.get("mg_extra.fog.desc"))
+                .setName(I18n.get("ru_extras.fog.title"))
+                .setTooltip(I18n.get("ru_extras.fog.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.fog.set(value),
@@ -136,9 +136,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.cloud_height.title"))
-                .setTooltip(I18n.get("mg_extra.cloud_height.desc"))
-                .setControl((option) -> new SliderControl(option, 64, 256, 4, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.blocks"))))
+                .setName(I18n.get("ru_extras.cloud_height.title"))
+                .setTooltip(I18n.get("ru_extras.cloud_height.desc"))
+                .setControl((option) -> new SliderControl(option, 64, 256, 4, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> {
                             MagnesiumExtrasConfig.cloudHeight.set(value);
@@ -159,8 +159,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> enableDistanceChecks = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(I18n.get("mg_extra.enable_max_entity_distance.title"))
-                .setTooltip(I18n.get("mg_extra.enable_max_entity_distance.desc"))
+                .setName(I18n.get("ru_extras.enable_max_entity_distance.title"))
+                .setTooltip(I18n.get("ru_extras.enable_max_entity_distance.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.enableDistanceChecks.set(value),
@@ -180,9 +180,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.max_entity_distance.title"))
-                .setTooltip(I18n.get("mg_extra.max_entity_distance.desc"))
-                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.blocks"))))
+                .setName(I18n.get("ru_extras.max_entity_distance.title"))
+                .setTooltip(I18n.get("ru_extras.max_entity_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.set(value * value),
                         (options) ->  Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.get()))))
@@ -190,9 +190,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.vertical_entity_distance.title"))
-                .setTooltip(I18n.get("mg_extra.vertical_entity_distance.desc"))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.blocks"))))
+                .setName(I18n.get("ru_extras.vertical_entity_distance.title"))
+                .setTooltip(I18n.get("ru_extras.vertical_entity_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.get())
@@ -212,9 +212,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.max_tile_distance.title"))
-                .setTooltip(I18n.get("mg_extra.max_tile_distance.desc"))
-                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.blocks"))))
+                .setName(I18n.get("ru_extras.max_tile_distance.title"))
+                .setTooltip(I18n.get("ru_extras.max_tile_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.set(value * value),
                         (options) -> Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.get()))))
@@ -222,9 +222,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(I18n.get("mg_extra.vertical_entity_distance.title"))
-                .setTooltip(I18n.get("mg_extra.vertical_entity_distance.desc"))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("mg_extra.option.unit.blocks"))))
+                .setName(I18n.get("ru_extras.vertical_entity_distance.title"))
+                .setTooltip(I18n.get("ru_extras.vertical_entity_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("ru_extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.get())
@@ -250,9 +250,9 @@ public class SodiumGameOptionsMixin
     private static void InjectGeneral(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {
         OptionImpl<GameSettings, MagnesiumExtrasConfig.FullscreenMode> fullscreenMode = OptionImpl.createBuilder( MagnesiumExtrasConfig.FullscreenMode.class, vanillaOpts)
-                .setName(I18n.get("mg_extra.full_screen_mode.title"))
-                .setTooltip(I18n.get("mg_extra.full_screen_mode.desc"))
-                .setControl((opt) -> new CyclingControl<>(opt, MagnesiumExtrasConfig.FullscreenMode.class, new String[] { I18n.get("mg_extra.option.windowed"), I18n.get("mg_extra.option.borderless"), I18n.get("mg_extra.option.fullscreen")}))
+                .setName(I18n.get("ru_extras.full_screen_mode.title"))
+                .setTooltip(I18n.get("ru_extras.full_screen_mode.desc"))
+                .setControl((opt) -> new CyclingControl<>(opt, MagnesiumExtrasConfig.FullscreenMode.class, new String[] { I18n.get("ru_extras.option.windowed"), I18n.get("ru_extras.option.borderless"), I18n.get("ru_extras.option.fullscreen")}))
                 .setBinding(
                         (opts, value) -> {
                             MagnesiumExtrasConfig.fullScreenMode.set(value);
@@ -275,7 +275,7 @@ public class SodiumGameOptionsMixin
                         (opts) -> MagnesiumExtrasConfig.fullScreenMode.get())
                 .build();
 
-        ReplaceOption(groups, I18n.get("mg_extra.option.fullscreen"), fullscreenMode);
+        ReplaceOption(groups, I18n.get("ru_extras.option.fullscreen"), fullscreenMode);
     }
 
 
@@ -301,6 +301,6 @@ public class SodiumGameOptionsMixin
 
     @ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "Advanced"))
     private static String ChangeCategoryName(String old) {
-        return I18n.get("mg_extra.extras.options.name");
+        return I18n.get("ru_extras.extras.options.name");
     }
 }
