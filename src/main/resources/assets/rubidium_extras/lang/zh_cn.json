@@ -1,4 +1,7 @@
 {
+  "rb_extra.key.zoom": "缩放",
+  "rb_extra.key.category": "铷·扩展",
+
   "rb_extra.options.off": "关",
   "rb_extra.options.simple": "简略",
   "rb_extra.options.advanced": "高级",

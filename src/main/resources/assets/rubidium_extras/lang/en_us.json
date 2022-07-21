@@ -1,4 +1,7 @@
 {
+  "rb_extra.key.zoom": "Zoom",
+  "rb_extra.key.category": "Rubidium Extras",
+
   "rb_extra.options.off": "Off",
   "rb_extra.options.simple": "Simple",
   "rb_extra.options.advanced": "Advanced",
