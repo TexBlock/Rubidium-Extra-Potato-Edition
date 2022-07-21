@@ -10,7 +10,7 @@ logoFile= "icon.png" #optional
 credits="TeamDeusVult" #optional
 authors="TexTrue,TexStudio-i18nProject" #optional
 description='''
-Magnesium-Extras Mod
+Magnesium Extras Settings
 '''
 
 [[dependencies.magnesium_extras]] #optional
