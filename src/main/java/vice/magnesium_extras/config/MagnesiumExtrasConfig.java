@@ -7,7 +7,7 @@ import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraftforge.common.ForgeConfigSpec;
 import java.nio.file.Path;
 import static net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
-import net.minecraft.client.resources.I18n;
+//import net.minecraft.client.resources.I18n;
 
 public class MagnesiumExtrasConfig
 {
@@ -65,59 +65,59 @@ public class MagnesiumExtrasConfig
 
     static
     {
-        val builder = new ConfigBuilder(I18n.get("mg_extra.dynamic_light.title"));
+        val builder = new ConfigBuilder("Dynamic Lights Settings");
 
-        builder.Block(I18n.get("mg_extra.misc.option.title"), b -> {
-            cloudHeight = b.define(I18n.get("mg_extra.misc.cloud_height.title"), 196);
-            fadeInQuality =  b.define(I18n.get("mg_extra.misc.chunk_quality.title"), "FANCY");
-            fog = b.define(I18n.get("mg_extra.misc.render_fog.title"), true);
-            fullScreenMode = b.defineEnum(I18n.get("mg_extra.misc.full_screen_mode.title"), FullscreenMode.FULLSCREEN);
+        builder.Block("Misc", b -> {
+            cloudHeight = b.define("Cloud Height [Raw, Default 196]", 196);
+            fadeInQuality =  b.define("Chunk Fade In Quality (OFF, FAST, FANCY)", "FANCY");
+            fog = b.define("Render Fog", true);
+            fullScreenMode = b.defineEnum("Use Borderless Fullscreen", FullscreenMode.FULLSCREEN);
         });
 
-        builder.Block(I18n.get("mg_extra.fps_counter.option.title"), b -> {
-            fpsCounterMode = b.define(I18n.get("mg_extra.fps_counter.mode.title"), "ADVANCED");
-            fpsCounterPosition = b.define(I18n.get("mg_extra.fps_counter.position.title"), 12);
+        builder.Block("FPS Counter", b -> {
+            fpsCounterMode = b.define("Display FPS Counter (OFF, SIMPLE, ADVANCED)", "ADVANCED");
+            fpsCounterPosition = b.define("FPS Counter Distance", 12);
         });
 
-        builder.Block(I18n.get("mg_extra.entity_dis.option.title"), b -> {
-            enableDistanceChecks = b.define(I18n.get("mg_extra.entity_dis.enable_dis_checks.title"), true);
+        builder.Block("Entity Distance", b -> {
+            enableDistanceChecks = b.define("Enable Max Distance Checks", true);
 
-            maxTileEntityRenderDistanceSquare = b.define(I18n.get("mg_extra.entity_dis.max_TE_render_dis_S.title"), 4096);
-            maxTileEntityRenderDistanceY = b.define(I18n.get("mg_extra.entity_distance.max_TE_render_dis_Y.title"), 32);
+            maxTileEntityRenderDistanceSquare = b.define("(TileEntity) Max Horizontal Render Distance [Squared, Default 64^2]", 4096);
+            maxTileEntityRenderDistanceY = b.define("(TileEntity) Max Vertical Render Distance [Raw, Default 32]", 32);
 
-            maxEntityRenderDistanceSquare = b.define(I18n.get("mg_extra.entity_distance.max_entity_render_dis_S.title"), 4096);
-            maxEntityRenderDistanceY = b.define(I18n.get("mg_extra.entity_distance.max_entity_render_dis_Y.title"), 32);
+            maxEntityRenderDistanceSquare = b.define("(Entity) Max Horizontal Render Distance [Squared, Default 64^2]", 4096);
+            maxEntityRenderDistanceY = b.define("(Entity) Max Vertical Render Distance [Raw, Default 32]", 32);
         });
 
-        builder.Block(I18n.get("mg_extra.zoom.option.name"), b -> {
-            lowerZoomSensitivity = b.define(I18n.get("mg_extra.zoom.lower_sensitivity.title"), true);
-            zoomScrolling = b.define(I18n.get("mg_extra.zoom.scrolling.title"), true);
-            zoomTransition = b.define(I18n.get("mg_extra.zoom.transition.title"), ZoomTransitionOptions.SMOOTH.toString());
-            zoomMode = b.define(I18n.get("mg_extra.zoom.keybind_mode.title"), ZoomModes.HOLD.toString());
-            cinematicCameraMode = b.define(I18n.get("mg_extra.zoom.cinematic_cam_mode.title"), CinematicCameraOptions.OFF.toString());
-            zoomOverlay = b.define(I18n.get("mg_extra.zoom.overlay.title"), true);
-            //zoomValues = b.define(I18n.get("mg_extra.zoom.values.title"), new ZoomValues());
+        builder.Block("Zoom", b -> {
+            lowerZoomSensitivity = b.define("Lower Zoom Sensitivity", true);
+            zoomScrolling = b.define("Zoom Scrolling Enabled", true);
+            zoomTransition = b.define("Zoom Transition Mode (OFF, LINEAR, SMOOTH)", ZoomTransitionOptions.SMOOTH.toString());
+            zoomMode = b.define("Zoom Transition Mode (TOGGLE, HOLD, PERSISTENT)", ZoomModes.HOLD.toString());
+            cinematicCameraMode = b.define("Cinematic Camera Mode (OFF, VANILLA, MULTIPLIED)", CinematicCameraOptions.OFF.toString());
+            zoomOverlay = b.define("Zoom Overlay?", true);
+            //zoomValues = b.define("Zoom Advanced Values", new ZoomValues());
         });
 
-        builder.Block(I18n.get("mg_extra.ture_darkness.option.title"), b -> {
-            trueDarknessEnabled = b.define(I18n.get("mg_extra.ture_darkness.enable_switch.title"), true);
-            darknessOption = b.defineEnum(I18n.get("mg_extra.ture_darkness.setting.title"), DarknessOption.DARK);
+        builder.Block("True Darkness", b -> {
+            trueDarknessEnabled = b.define("Use True Darkness", true);
+            darknessOption = b.defineEnum("Darkness Setting (PITCH_BLACK, REALLY_DARK, DARK, DIM)", DarknessOption.DARK);
 
-            builder.Block(I18n.get("mg_extra.advanced.option.title"), b2 -> {
-                blockLightOnly = b2.define(I18n.get("mg_extra.advanced.block_light_only.title"), false);
-                ignoreMoonPhase = b2.define(I18n.get("mg_extra.advanced.ignore_moon_light.title"), false);
-                minimumMoonLevel = b2.defineInRange(I18n.get("mg_extra.advanced.mini_moon_light.title"), 0, 0, 1d);
-                maximumMoonLevel = b2.defineInRange(I18n.get("mg_extra.advanced.max_moon_light.title"), 0.25d, 0, 1d);
+            builder.Block("Advanced", b2 -> {
+                blockLightOnly = b2.define("Only Effect Block Lighting", false);
+                ignoreMoonPhase = b2.define("Ignore Moon Light", false);
+                minimumMoonLevel = b2.defineInRange("Minimum Moon Brightness (0->1)", 0, 0, 1d);
+                maximumMoonLevel = b2.defineInRange("Maximum Moon Brightness (0->1)", 0.25d, 0, 1d);
             });
 
-            builder.Block(I18n.get("mg_extra.dim_setting.option.title"), b2 -> {
-                darkOverworld = b2.define(I18n.get("mg_extra.dim_setting.dark_overworld.title"), true);
-                darkDefault = b2.define(I18n.get("mg_extra.dim_setting.dark_default.title"), false);
-                darkNether = b2.define(I18n.get("mg_extra.dim_setting.dark_nether.title"), false);
-                darkNetherFogConfigured = b2.defineInRange(I18n.get("mg_extra.dim_setting.dark_nether_fog_configured.title"), .5, 0, 1d);
-                darkEnd = b2.define(I18n.get("mg_extra.dim_setting.dark_end.title"), false);
-                darkEndFogConfigured = b.defineInRange(I18n.get("mg_extra.dim_setting.dark_end_fog_configured.title"), 0, 0, 1d);
-                darkSkyless = b2.define(I18n.get("mg_extra.dim_setting.dark_skylight.title"), false);
+            builder.Block("Dimension Settings", b2 -> {
+                darkOverworld = b2.define("Dark Overworld?", true);
+                darkDefault = b2.define("Dark By Default?", false);
+                darkNether = b2.define("Dark Nether?", false);
+                darkNetherFogConfigured = b2.defineInRange("Dark Nether Fog Brightness (0->1)", .5, 0, 1d);
+                darkEnd = b2.define("Dark End?", false);
+                darkEndFogConfigured = b.defineInRange("Dark End Fog Brightness (0->1)", 0, 0, 1d);
+                darkSkyless = b2.define("Dark If No Skylight?", false);
             });
         });
 
@@ -134,9 +134,9 @@ public class MagnesiumExtrasConfig
 
     public static enum Complexity implements TextProvider
     {
-        OFF(I18n.get("mg_extra.option.off")),
-        SIMPLE(I18n.get("mg_extra.option.simple")),
-        ADVANCED(I18n.get("mg_extra.option.advanced"));
+        OFF("Off"),
+        SIMPLE("Simple"),
+        ADVANCED("Advanced");
 
         private final String name;
 
@@ -151,9 +151,9 @@ public class MagnesiumExtrasConfig
 
     public static enum Quality implements TextProvider
     {
-        OFF(I18n.get("mg_extra.option.off")),
-        FAST(I18n.get("mg_extra.option.fast")),
-        FANCY(I18n.get("mg_extra.option.fancy"));
+        OFF("Off"),
+        FAST("Fast"),
+        FANCY("Fancy");
 
         private final String name;
 
