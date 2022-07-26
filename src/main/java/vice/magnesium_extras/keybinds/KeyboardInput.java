@@ -18,11 +18,11 @@ import vice.magnesium_extras.MagnesiumExtras;
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class KeyboardInput
 {
-    public static final KeyBinding zoomKey = new KeyBinding("key.zoom",
+    public static final KeyBinding zoomKey = new KeyBinding("extras.key.zoom",
             KeyConflictContext.IN_GAME,
             KeyModifier.NONE,
             InputMappings.Type.KEYSYM,
             GLFW.GLFW_KEY_C,
-            "key.category." + MagnesiumExtras.MODID);
+            "extras.key.category");
 
 }
