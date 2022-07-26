@@ -106,7 +106,15 @@ public class SodiumGameOptionsMixin
         Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
                 .setName(I18n.get("extras.ture_darkness.mode.title"))
                 .setTooltip(I18n.get("extras.ture_darkness.mode.desc"))
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] { "Pitch Black", "Really Dark", "Dark", "Dim"}))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] {
+                        I18n.get("extras.option.pitch_black"),
+                        I18n.get("extras.option.really_dark"),
+                        I18n.get("extras.option.dark"),
+                        I18n.get("extras.option.dim")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
                         (opts) -> MagnesiumExtrasConfig.darknessOption.get())
@@ -123,9 +131,16 @@ public class SodiumGameOptionsMixin
 
 
         Option<MagnesiumExtrasConfig.Quality> fadeInQuality =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Quality.class, sodiumOpts)
-                .setName("Chunk Fade In Quality")
-                .setTooltip("Controls how fast chunks fade in. No performance hit, Fancy simply takes longer, but looks a bit cooler.")
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] { "Off", "Fast", "Fancy"}))
+                .setName(I18n.get("extras.misc.chunk_fade_quality.title"))
+                .setTooltip(I18n.get("extras.misc.chunk_fade_quality.desc"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] {
+                        I18n.get("extras.option.off"),
+                        I18n.get("extras.option.fast"),
+                        I18n.get("extras.option.fancy")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fadeInQuality.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.Quality.valueOf(MagnesiumExtrasConfig.fadeInQuality.get()))
@@ -133,8 +148,8 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName("Enable fog")
-                .setTooltip("Toggles off all fog in the overworld.")
+                .setName(I18n.get("extras.fog.title"))
+                .setTooltip(I18n.get("extras.fog.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.fog.set(value),
@@ -143,9 +158,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("Cloud Height")
-                .setTooltip("Raises cloud height.")
-                .setControl((option) -> new SliderControl(option, 64, 256, 4, ControlValueFormatter.quantity("Blocks")))
+                .setName(I18n.get("extras.cloud_height.title"))
+                .setTooltip(I18n.get("extras.cloud_height.desc"))
+                .setControl((option) -> new SliderControl(option, 64, 256, 4, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> {
                             MagnesiumExtrasConfig.cloudHeight.set(value);
@@ -166,8 +181,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> enableDistanceChecks = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName("Enable Max Entity Distance")
-                .setTooltip("Toggles off entity culling.")
+                .setName(I18n.get("extras.enable_max_entity_distance.title"))
+                .setTooltip(I18n.get("extras.enable_max_entity_distance.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.enableDistanceChecks.set(value),
@@ -187,9 +202,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("Max Entity Distance")
-                .setTooltip("Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms.")
-                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.quantity("Blocks")))
+                .setName(I18n.get("extras.max_entity_distance.title"))
+                .setTooltip(I18n.get("extras.max_entity_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.set(value * value),
                         (options) ->  Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.get()))))
@@ -197,9 +212,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("Vertical Entity Distance")
-                .setTooltip("Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance.")
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity("Blocks")))
+                .setName(I18n.get("extras.vertical_entity_distance.title"))
+                .setTooltip(I18n.get("extras.vertical_entity_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.get())
@@ -219,9 +234,9 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("Max Tile Distance")
-                .setTooltip("Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines.")
-                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.quantity("Blocks")))
+                .setName(I18n.get("extras.max_tile_distance.title"))
+                .setTooltip(I18n.get("extras.max_tile_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.set(value * value),
                         (options) -> Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.get()))))
@@ -229,9 +244,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("Vertical Tile Distance")
-                .setTooltip("Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance.")
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity("Blocks")))
+                .setName(I18n.get("extras.vertical_tile_distance.title"))
+                .setTooltip(I18n.get("extras.vertical_tile_distance.desc"))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.get())
@@ -257,9 +272,16 @@ public class SodiumGameOptionsMixin
     private static void InjectGeneral(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {
         OptionImpl<GameSettings, MagnesiumExtrasConfig.FullscreenMode> fullscreenMode = OptionImpl.createBuilder( MagnesiumExtrasConfig.FullscreenMode.class, vanillaOpts)
-                .setName("Fullscreen Mode")
-                .setTooltip("Windowed - the game will display in a small window.\nBorderless - the game will be fullscreened, and locked to your monitor's refresh rate, but allow you to tab out easily.\nFullscreen - the game will display in native fullscreen mode.")
-                .setControl((opt) -> new CyclingControl<>(opt, MagnesiumExtrasConfig.FullscreenMode.class, new String[] { "Windowed", "Borderless", "Fullscreen"}))
+                .setName(I18n.get("extras.full_screen_mode.title"))
+                .setTooltip(I18n.get("extras.full_screen_mode.desc"))
+                .setControl(
+                        (opt) -> new CyclingControl<>(opt, MagnesiumExtrasConfig.FullscreenMode.class, new String[] {
+                        I18n.get("extras.option.windowed"),
+                        I18n.get("extras.option.borderless"),
+                        I18n.get("extras.option.fullscreen")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> {
                             MagnesiumExtrasConfig.fullScreenMode.set(value);
@@ -282,7 +304,7 @@ public class SodiumGameOptionsMixin
                         (opts) -> MagnesiumExtrasConfig.fullScreenMode.get())
                 .build();
 
-        ReplaceOption(groups, "Fullscreen", fullscreenMode);
+        ReplaceOption(groups, I18n.get("extras.option.fullscreen"), fullscreenMode);
     }
 
 
@@ -306,8 +328,8 @@ public class SodiumGameOptionsMixin
         groups.addAll(newList);
     }
 
-    @ModifyConstant(method = "experimental", remap = false, constant = @Constant(stringValue = "Experimental"))
+    @ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "Advanced"))
     private static String ChangeCategoryName(String old) {
-        return "Extras";
+        return I18n.get("extras.extras.options.name");
     }
 }

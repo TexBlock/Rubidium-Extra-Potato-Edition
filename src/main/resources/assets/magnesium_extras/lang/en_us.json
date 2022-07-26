@@ -23,12 +23,8 @@
   "extras.option.unit.pixels": "Pixels",
   "extras.option.unit.blocks": "Blocks",
 
-  "extras.misc.option.title": "Misc",
-
   "extras.zoom.option.name": "Zoom",
   "extras.extras.options.name": "Extras",
-  "extras.experimental.options.name": "Experimental",
-  "extras.display_fps.display.title": "Display FPS",
 
   "extras.cloud_height.title": "Cloud Height",
   "extras.cloud_height.desc": "Raises cloud height.",
@@ -39,6 +35,7 @@
   "extras.full_screen_mode.title": "Fullscreen Mode",
   "extras.full_screen_mode.desc": "Windowed - the game will display in a small window.\nBorderless - the game will be fullscreened, and locked to your monitor's refresh rate, but allow you to tab out easily.\nFullscreen - the game will display in native fullscreen mode.",
 
+  "extras.display_fps.display.title": "Display FPS",
   "extras.display_fps.display.desc": "Displays the current FPS. Advanced mode also displays minimum FPS, as well as 15 second average FPS, which are more useful for judging performance.",
   "extras.display_fps.position.title": "FPS Display Position",
   "extras.display_fps.position.desc": "Offsets the FPS display a few pixels",
@@ -47,12 +44,13 @@
   "extras.enable_max_entity_distance.desc": "Toggles off entity culling.",
   "extras.max_entity_distance.title": "Max Entity Distance",
   "extras.max_entity_distance.desc": "Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms.",
-  "extras.vertical_entity_distance.title": "Vertical Tile Distance",
+  "extras.vertical_entity_distance.title": "Vertical Entity Distance",
   "extras.vertical_entity_distance.desc": "Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance.",
+  "extras.vertical_tile_distance.title": "Vertical Tile Distance",
+  "extras.vertical_tile_distance.desc": "Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance.",
   "extras.max_tile_distance.title": "Max Tile Distance",
   "extras.max_tile_distance.desc": "Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines.",
 
-  "extras.zoom.scrolling_enable.title": "Zoom Scrolling Enabled",
   "extras.zoom.scrolling.title": "Zoom Scrolling",
   "extras.zoom.scrolling.desc": "Allows using scroll wheel to adjust zoom amount.",
   "extras.zoom.transition.title": "Zoom Transition Mode",

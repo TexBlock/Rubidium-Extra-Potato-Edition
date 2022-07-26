@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
+import net.minecraft.client.resources.I18n;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +49,8 @@ public abstract class ZoomSettingsPage
         //        .build();
 
         OptionImpl<SodiumGameOptions, Boolean> zoomScrolling = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName("Zoom Scrolling")
-                .setTooltip("Allows using scroll wheel to adjust zoom amount.")
+                .setName(I18n.get("extras.zoom.scrolling.title"))
+                .setTooltip(I18n.get("extras.zoom.scrolling.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.zoomScrolling.set(value),
@@ -58,8 +59,8 @@ public abstract class ZoomSettingsPage
                 .build();
 
         OptionImpl<SodiumGameOptions, Boolean> zoomOverlay = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName("Zoom Overlay")
-                .setTooltip("Renders a vignette overlay when zooming.")
+                .setName(I18n.get("extras.zoom.overlay.title"))
+                .setTooltip(I18n.get("extras.zoom.overlay.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.zoomOverlay.set(value),
@@ -78,9 +79,15 @@ public abstract class ZoomSettingsPage
 
 
         Option<MagnesiumExtrasConfig.ZoomTransitionOptions> zoomTransition =  OptionImpl.createBuilder(MagnesiumExtrasConfig.ZoomTransitionOptions.class, sodiumOpts)
-                .setName("Zoom Transition Mode")
-                .setTooltip("Controls how the game changes from normal to zoomed. Off will be an instant transition.")
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomTransitionOptions.class, new String[] { "Off", "Smooth" }))
+                .setName(I18n.get("extras.zoom.transition.title"))
+                .setTooltip(I18n.get("extras.zoom.transition.desc"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomTransitionOptions.class, new String[] {
+                        I18n.get("extras.option.off"),
+                        I18n.get("extras.option.smooth")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.zoomTransition.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.ZoomTransitionOptions.valueOf(MagnesiumExtrasConfig.zoomTransition.get()))
@@ -88,9 +95,16 @@ public abstract class ZoomSettingsPage
                 .build();
 
         Option<MagnesiumExtrasConfig.ZoomModes> zoomMode =  OptionImpl.createBuilder(MagnesiumExtrasConfig.ZoomModes.class, sodiumOpts)
-                .setName("Zoom Keybind Mode")
-                .setTooltip("Hold - Zoom only while the key is down.\nToggle - Lock zoom until you press the key again\nPersistent - Always zoom, if you want that, for some reason.")
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomModes.class, new String[] { "Hold", "Toggle", "Persistent"}))
+                .setName(I18n.get("extras.zoom.keybind.title"))
+                .setTooltip(I18n.get("extras.zoom.keybind.desc"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomModes.class, new String[] {
+                        I18n.get("extras.option.hold"),
+                        I18n.get("extras.option.toggle"),
+                        I18n.get("extras.option.persistent")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.zoomMode.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.ZoomModes.valueOf(MagnesiumExtrasConfig.zoomMode.get()))
@@ -116,6 +130,6 @@ public abstract class ZoomSettingsPage
         );
 
 
-        pages.add(new OptionPage("Zoom", ImmutableList.copyOf(groups)));
+        pages.add(new OptionPage(I18n.get("extras.zoom.option.name"), ImmutableList.copyOf(groups)));
     }
 }

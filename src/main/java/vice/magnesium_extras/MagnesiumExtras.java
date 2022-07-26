@@ -43,7 +43,7 @@ public class MagnesiumExtras
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         MinecraftForge.EVENT_BUS.register(this);
 
-        MagnesiumExtrasConfig.loadConfig(FMLPaths.CONFIGDIR.get().resolve("magnesium_extras.toml"));
+        MagnesiumExtrasConfig.loadConfig(FMLPaths.CONFIGDIR.get().resolve("mgrb_extras.toml"));
 
         //MinecraftForge.EVENT_BUS.register(this);
 
@@ -71,7 +71,7 @@ public class MagnesiumExtras
             try
             {
                 chunkClaimProvider = Class.forName("vice.magnesium_extras.util.chunks.ActiveChunkClaimProvider").asSubclass(IChunkClaimProvider.class).newInstance();
-                LOGGER.info("Found FTB Chunks, enabling MagnesiumExtras integration.");
+                LOGGER.info("Found FTB Chunks, enabling Magnesium/Rubidium Extras integration.");
             }
             catch (Exception e)
             {
