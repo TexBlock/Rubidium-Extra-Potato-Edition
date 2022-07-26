@@ -23,6 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 import vice.magnesium_extras.mixins.BorderlessFullscreen.MainWindowAccessor;
+import net.minecraft.client.resources.I18n;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class SodiumGameOptionsMixin
 
     //private static void experimental(CallbackInfoReturnable<OptionPage> cir)
     @Inject(
-            method = "experimental",
+            method = "advanced",
             at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableList;copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;"),
             locals = LocalCapture.CAPTURE_FAILHARD,
             remap = false,
@@ -51,13 +52,20 @@ public class SodiumGameOptionsMixin
             optionGroup
                     .getOptions()
                     .stream()
-                    .anyMatch((option) -> Objects.equals(option.getName(), "Display FPS"))
+                    .anyMatch((option) -> Objects.equals(option.getName(), I18n.get("extras.display_fps.display.title")))
         );
 
         Option<MagnesiumExtrasConfig.Complexity> displayFps =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Complexity.class, sodiumOpts)
-                .setName("Display FPS")
-                .setTooltip("Displays the current FPS. Advanced mode also displays minimum FPS, as well as 15 second average FPS, which are more useful for judging performance.")
-                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Complexity.class, new String[] { "Off", "Simple", "Advanced"}))
+                .setName(I18n.get("extras.display_fps.display.title"))
+                .setTooltip(I18n.get("extras.display_fps.display.desc"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Complexity.class, new String[] {
+                        I18n.get("extras.option.off"),
+                        I18n.get("extras.option.simple"),
+                        I18n.get("extras.option.advanced")
+                        }
+                        )
+                )
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fpsCounterMode.set(value.toString()),
                         (opts) -> MagnesiumExtrasConfig.Complexity.valueOf(MagnesiumExtrasConfig.fpsCounterMode.get()))
@@ -66,10 +74,10 @@ public class SodiumGameOptionsMixin
 
 
         Option<Integer> displayFpsPos = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName("FPS Display Position")
-                .setTooltip("Offsets the FPS display a few pixels")
+                .setName(I18n.get("extras.display_fps.position.title"))
+                .setTooltip(I18n.get("extras.display_fps.position.desc"))
                 .setControl((option) -> {
-                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity("Pixels"));
+                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity(I18n.get("extras.option.unit.pixels")));
                 })
                 .setImpact(OptionImpact.LOW)
                 .setBinding(
@@ -86,8 +94,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> totalDarkness = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName("True Darkness")
-                .setTooltip("Makes the rest of the world more realistically dark. Does not effect daytime or torch light.")
+                .setName(I18n.get("extras.ture_darkness.options.title"))
+                .setTooltip(I18n.get("extras.ture_darkness.options.desc"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.trueDarknessEnabled.set(value),
@@ -96,8 +104,8 @@ public class SodiumGameOptionsMixin
                 .build();
 
         Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
-                .setName("True Darkness Mode")
-                .setTooltip("Controls how dark is considered true darkness.")
+                .setName(I18n.get("extras.ture_darkness.mode.title"))
+                .setTooltip(I18n.get("extras.ture_darkness.mode.desc"))
                 .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] { "Pitch Black", "Really Dark", "Dark", "Dim"}))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
