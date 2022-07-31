@@ -2,9 +2,12 @@ package vice.rubidium_extras.mixins.JEI;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.gui.handlers.IGuiProperties;
-import mezz.jei.gui.elements.GuiIconToggleButton;
-import mezz.jei.gui.overlay.IngredientListOverlay;
-import mezz.jei.input.GuiTextFieldFilter;
+import mezz.jei.common.gui.elements.GuiIconToggleButton;
+import mezz.jei.common.gui.overlay.IngredientListOverlay;
+import mezz.jei.common.input.GuiTextFieldFilter;
+//import mezz.jei.gui.elements.GuiIconToggleButton;
+//import mezz.jei.gui.overlay.IngredientListOverlay;
+//import mezz.jei.input.GuiTextFieldFilter;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
