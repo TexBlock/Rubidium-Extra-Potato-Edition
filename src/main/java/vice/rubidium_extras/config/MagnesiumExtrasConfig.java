@@ -5,7 +5,7 @@ import com.electronwill.nightconfig.core.io.WritingMode;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.client.resources.language.I18n;
+//import net.minecraft.client.resources.language.I18n;
 import net.minecraftforge.common.ForgeConfigSpec;
 import java.nio.file.Path;
 
@@ -68,7 +68,7 @@ public class MagnesiumExtrasConfig
 
     static
     {
-        var builder = new ConfigBuilder(I18n.get("rb_extra.misc.dynamic_light.name"));
+        var builder = new ConfigBuilder("Dynamic Lights Settings");
 
         builder.Block("Misc", b -> {
             cloudHeight = b.define("Cloud Height [Raw, Default 256]", 256);

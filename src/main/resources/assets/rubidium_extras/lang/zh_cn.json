@@ -20,8 +20,8 @@
   "rb_extra.options.windowed": "窗口",
   "rb_extra.options.borderless": "无边框",
   "rb_extra.options.fullscreen": "全屏",
-  "rb_extra.options.unit.pixels": "像素",
-  "rb_extra.options.unit.blocks": "方块",
+  "rb_extra.options.unit.pixels": "%s 像素",
+  "rb_extra.options.unit.blocks": "%s 方块",
 
   "rb_extra.misc.page.name": "杂项",
   "rb_extra.page.zoom": "缩放",

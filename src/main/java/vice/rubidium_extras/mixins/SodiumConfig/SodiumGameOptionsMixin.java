@@ -13,7 +13,7 @@ import net.minecraft.client.Options;
 import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+//import net.minecraft.network.chat.TranslatableComponent;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -75,9 +75,7 @@ public class SodiumGameOptionsMixin
         Option<Integer> displayFpsPos = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.position_fps.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.position_fps.tooltip")))
-                .setControl((option) -> {
-                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.pixels")));
-                })
+                .setControl((option) -> new SliderControl(option, 4, 64, 2, ControlValueFormatter.translateVariable("rb_extra.options.unit.pixels")))
                 .setImpact(OptionImpact.LOW)
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fpsCounterPosition.set(value),
@@ -163,7 +161,7 @@ public class SodiumGameOptionsMixin
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.cloud_height.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.cloud_height.tooltip")))
-                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
+                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable("rb_extra.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> {
                             MagnesiumExtrasConfig.cloudHeight.set(value);
@@ -207,7 +205,7 @@ public class SodiumGameOptionsMixin
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.max_entity_distance.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.max_entity_distance.tooltip")))
-                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
+                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable("rb_extra.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.set(value * value),
                         (options) ->  Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.get()))))
@@ -239,7 +237,7 @@ public class SodiumGameOptionsMixin
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.max_tile_distance.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.max_tile_distance.tooltip")))
-                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
+                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable("rb_extra.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.set(value * value),
                         (options) -> Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.get()))))
@@ -249,7 +247,7 @@ public class SodiumGameOptionsMixin
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.vertical_tile_distance.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.vertical_tile_distance.tooltip")))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("rb_extra.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.get())
