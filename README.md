@@ -4,10 +4,10 @@
  <h2 align="center">Magnesium / Rubidium-Extras i18n</h2>
  <p align="center"></p>
 
-[English](README-EN.md) / 简体中文 / [原 README-英文](Original Repo info/README.txt)
+[English](README-EN.md) / 简体中文 
 
 ### 这是干什么的？
-Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。翻译问题请到issues反馈。
+Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。有问题请到issues反馈。
 
 ### 链接
 原Repo : [TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
