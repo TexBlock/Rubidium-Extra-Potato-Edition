@@ -20,8 +20,8 @@
   "extras.option.windowed": "Windowed",
   "extras.option.borderless": "Borderless",
   "extras.option.fullscreen": "Fullscreen",
-  "extras.option.unit.pixels": "Pixels",
-  "extras.option.unit.blocks": "Blocks",
+  "extras.option.unit.pixels": " Pixels",
+  "extras.option.unit.blocks": " Blocks",
 
   "extras.zoom.option.name": "Zoom",
   "extras.extras.options.name": "Extras",
@@ -57,8 +57,6 @@
   "extras.zoom.transition.desc": "Controls how the game changes from normal to zoomed. Off will be an instant transition.",
   "extras.zoom.keybind.title": "Zoom Keybind Mode",
   "extras.zoom.keybind.desc": "Hold - Zoom only while the key is down.\nToggle - Lock zoom until you press the key again\nPersistent - Always zoom, if you want that, for some reason.",
-  "extras.zoom.cinematic_cam_mode.options_title": "Cinematic Camera Options",
-  "extras.zoom.cinematic_cam_mode.title": "Cinematic Camera Mode",
   "extras.zoom.overlay.title": "Zoom Overlay",
   "extras.zoom.overlay.desc": "Renders a vignette overlay when zooming.",
 

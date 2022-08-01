@@ -20,7 +20,7 @@
     "extras.option.windowed": "窗口",
     "extras.option.borderless": "无边框",
     "extras.option.fullscreen": "全屏",
-    "extras.option.unit.pixels": "像素",
+    "extras.option.unit.pixels": "个像素",
     "extras.option.unit.blocks": "个方块",
 
     "extras.zoom.option.name": "缩放",
@@ -58,8 +58,6 @@
     "extras.zoom.transition.desc": "控制游戏如何从正常过渡到缩放, 关闭将即时过渡",
     "extras.zoom.keybind.title": "缩放按键模式",
     "extras.zoom.keybind.desc": "按住 - 仅在快捷键按下时进行缩放。\n切换 - 锁定变焦，直到你再次按下快捷键\n保持 - 总是缩放，如果你出于某种原因想这样。",
-    "extras.zoom.cinematic_cam_mode.options_title": "电影摄影机选项",
-    "extras.zoom.cinematic_cam_mode.title": "电影摄像机模式",
     "extras.zoom.overlay.title": "缩放晕影",
     "extras.zoom.overlay.desc": "缩放时渲染晕影覆盖",
   

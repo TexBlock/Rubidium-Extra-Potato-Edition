@@ -76,9 +76,7 @@ public class SodiumGameOptionsMixin
         Option<Integer> displayFpsPos = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(I18n.get("extras.display_fps.position.title"))
                 .setTooltip(I18n.get("extras.display_fps.position.desc"))
-                .setControl((option) -> {
-                    return new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity(I18n.get("extras.option.unit.pixels")));
-                })
+                .setControl((option) -> new SliderControl(option, 4, 64, 2, ControlValueFormatter.quantity(I18n.get("extras.option.unit.pixels"))))
                 .setImpact(OptionImpact.LOW)
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.fpsCounterPosition.set(value),
