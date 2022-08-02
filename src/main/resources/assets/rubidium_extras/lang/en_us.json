@@ -33,8 +33,6 @@
   "rb_extra.cloud_height.tooltip": "Raises cloud height.",
   "rb_extra.fog.name": "Enable fog",
   "rb_extra.fog.tooltip": "Toggles off all fog in the overworld.",
-  "rb_extra.hide_jei_until_searching.name": "Hide JEI Until Searching",
-  "rb_extra.hide_jei_until_searching.tooltip": "Toggles off JEI items unless you search for something. Press space to search for everything.",
   "rb_extra.full_screen_mode.name": "Fullscreen Mode",
   "rb_extra.full_screen_mode.tooltip": "Windowed - the game will display in a small window.\nBorderless - the game will be fullscreened, and locked to your monitor's refresh rate, but allow you to tab out easily.\nFullscreen - the game will display in native fullscreen mode.",
 

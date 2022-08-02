@@ -148,15 +148,15 @@ public class SodiumGameOptionsMixin
                 .setImpact(OptionImpact.LOW)
                 .build();
 
-        OptionImpl<SodiumGameOptions, Boolean> hideJEI = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.name")))
-                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.tooltip")))
-                .setControl(TickBoxControl::new)
-                .setBinding(
-                        (options, value) -> MagnesiumExtrasConfig.hideJEI.set(value),
-                        (options) -> MagnesiumExtrasConfig.hideJEI.get())
-                .setImpact(OptionImpact.LOW)
-                .build();
+//        OptionImpl<SodiumGameOptions, Boolean> hideJEI = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
+//                .setName(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.name")))
+//                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.hide_jei_until_searching.tooltip")))
+//                .setControl(TickBoxControl::new)
+//                .setBinding(
+//                        (options, value) -> MagnesiumExtrasConfig.hideJEI.set(value),
+//                        (options) -> MagnesiumExtrasConfig.hideJEI.get())
+//                .setImpact(OptionImpact.LOW)
+//                .build();
 
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.cloud_height.name")))

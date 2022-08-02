@@ -33,8 +33,6 @@
   "rb_extra.cloud_height.tooltip": "提高云层高度。",
   "rb_extra.fog.name": "启用雾",
   "rb_extra.fog.tooltip": "关掉主世界所有的雾。",
-  "rb_extra.hide_jei_until_searching.name": "在搜索前隐藏JEI",
-  "rb_extra.hide_jei_until_searching.tooltip": "关闭JEI物品，除非你搜索到什么。按空格键可以搜索所有东西。",
   "rb_extra.full_screen_mode.name": "全屏模式",
   "rb_extra.full_screen_mode.tooltip": "窗口 - 游戏将在一个小窗口中显示。\n无边框 - 游戏将是全屏的，并锁定在你的显示器的刷新率上，但允许你轻松地退出。\n全屏 - 游戏将以原版全屏模式显示。",
 

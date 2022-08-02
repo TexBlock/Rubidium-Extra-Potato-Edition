@@ -127,7 +127,7 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:oculus-581495:3770744")
     runtimeOnly fg.deobf("curse.maven:create-328085:3737418")
     runtimeOnly fg.deobf("curse.maven:flywheel-486392:3737402")
-    implementation fg.deobf("curse.maven:jei-238222:3758750")
+//    implementation fg.deobf("curse.maven:jei-238222:3758750")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
 }
