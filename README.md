@@ -9,6 +9,8 @@
 ### 这是干什么的？
 Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。翻译问题请到issues反馈。
 
+此分支已不受支持，请移至 [1.16-i18n/multi-dev](https://github.com/ForgeModi18n/MgRb-Extras-i18n/tree/1.16-i18n/multi-dev)。
+
 ### 友情链接
 原Repo：[TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
 
