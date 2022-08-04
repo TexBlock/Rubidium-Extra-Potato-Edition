@@ -18,6 +18,7 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<String> fadeInQuality;
 
     public static ConfigValue<String> fpsCounterMode;
+    public static ConfigValue<Boolean> fpsCounterAlignRight;
     public static ConfigValue<Integer> fpsCounterPosition;
     public static ForgeConfigSpec.ConfigValue<Integer> cloudHeight;
 
@@ -74,12 +75,13 @@ public class MagnesiumExtrasConfig
             cloudHeight = b.define("Cloud Height [Raw, Default 256]", 256);
             fadeInQuality =  b.define("Chunk Fade In Quality (OFF, FAST, FANCY)", "FANCY");
             fog = b.define("Render Fog", true);
-//            hideJEI = b.define("Hide JEI Until Searching", true);
+            //hideJEI = b.define("Hide JEI Until Searching", true);
             fullScreenMode = b.defineEnum("Use Borderless Fullscreen", FullscreenMode.FULLSCREEN);
         });
 
         builder.Block("FPS Counter", b -> {
             fpsCounterMode = b.define("Display FPS Counter (OFF, SIMPLE, ADVANCED)", "ADVANCED");
+            fpsCounterAlignRight = b.define("Right-align FPS Counter", false);
             fpsCounterPosition = b.define("FPS Counter Distance", 12);
         });
 

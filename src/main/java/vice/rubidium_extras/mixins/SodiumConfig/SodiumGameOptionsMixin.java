@@ -34,11 +34,15 @@ import java.util.Objects;
 @Mixin(SodiumGameOptionPages.class)
 public class SodiumGameOptionsMixin
 {
-    @Shadow @Final private static SodiumOptionsStorage sodiumOpts;
+    @Shadow
+    @Final
+    private static SodiumOptionsStorage sodiumOpts;
 
     //@Inject(at = @At("HEAD"), method = "experimental", remap = false, cancellable = true)
 
-    @Shadow @Final private static MinecraftOptionsStorage vanillaOpts;
+    @Shadow
+    @Final
+    private static MinecraftOptionsStorage vanillaOpts;
 
     //private static void experimental(CallbackInfoReturnable<OptionPage> cir)
     @Inject(
@@ -82,8 +86,19 @@ public class SodiumGameOptionsMixin
                         (opts) -> MagnesiumExtrasConfig.fpsCounterPosition.get())
                 .build();
 
+        OptionImpl<SodiumGameOptions, Boolean> displayFpsAlignRight = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
+                .setName(Component.nullToEmpty(I18n.get("rb_extra.right_align_fps.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.right_align_fps.tooltip")))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                        (options, value) -> MagnesiumExtrasConfig.fpsCounterAlignRight.set(value),
+                        (options) -> MagnesiumExtrasConfig.fpsCounterAlignRight.get())
+                .setImpact(OptionImpact.LOW)
+                .build();
+
         groups.add(OptionGroup.createBuilder()
                 .add(displayFps)
+                .add(displayFpsAlignRight)
                 .add(displayFpsPos)
                 .build());
 

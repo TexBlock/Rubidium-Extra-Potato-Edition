@@ -23,11 +23,8 @@
   "rb_extra.options.unit.pixels": "%s 像素",
   "rb_extra.options.unit.blocks": "%s 方块",
 
-  "rb_extra.misc.page.name": "杂项",
-  "rb_extra.page.zoom": "缩放",
+  "rb_extra.page.zoom": "缩放(测试)",
   "rb_extra.page.extras": "扩展",
-  "rb_extra.page.experimental": "实验性",
-  "rb_extra.page.advanced": "高级",
 
   "rb_extra.cloud_height.name": "云层高度",
   "rb_extra.cloud_height.tooltip": "提高云层高度。",
@@ -39,7 +36,10 @@
   "rb_extra.display_fps.name": "显示 FPS",
   "rb_extra.display_fps.tooltip": "显示当前的 FPS 。高级模式还显示最低 FPS ，以及15秒的平均 FPS ，这对判断性能更有用。",
   "rb_extra.position_fps.name": "FPS 显示位置",
-  "rb_extra.position_fps.tooltip": "显示帧数的位置",
+  "rb_extra.position_fps.tooltip": "从屏幕的左上角或右上角显示 FPS。",
+  "rb_extra.right_align_fps.name": "在右侧显示 FPS",
+  "rb_extra.right_align_fps.tooltip":"将FPS显示在屏幕的右侧。如果你有其他显示在屏幕左边的东西，这很有用。如果 “显示 FPS” 选项被设置为 “关闭”，则没有任何作用。",
+
 
   "rb_extra.enable_max_entity_distance.name": "启用最大实体距离",
   "rb_extra.enable_max_entity_distance.tooltip": "关闭实体剔除。",
@@ -52,8 +52,6 @@
   "rb_extra.vertical_tile_distance.name": "垂直实体方块渲染距离",
   "rb_extra.vertical_tile_distance.tooltip": "将实体方块隐藏在这么多的方块下面，提高在山洞上面的性能（如果你的机器出于某种原因在山洞里）。这个值最好设置得比水平距离要低。",
 
-  "rb_extra.lower_zoom_sensitivity.name": "较低的缩放灵敏度",
-  "rb_extra.lower_zoom_sensitivity.tooltip": "降低缩放时的灵敏度，使其感觉更稳定。",
   "rb_extra.zoom_scrolling.name": "滚轮缩放",
   "rb_extra.zoom_scrolling.tooltip": "允许使用滚轮来调整缩放量。",
   "rb_extra.zoom_transition_mode.name": "缩放过渡模式",

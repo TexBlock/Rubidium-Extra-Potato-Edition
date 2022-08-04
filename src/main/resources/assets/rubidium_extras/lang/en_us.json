@@ -23,11 +23,8 @@
   "rb_extra.options.unit.pixels": "%s Pixels",
   "rb_extra.options.unit.blocks": "%s Blocks",
 
-  "rb_extra.misc.page.name": "Misc",
-  "rb_extra.page.zoom": "Zoom",
+  "rb_extra.page.zoom": "Zoom (Testing)",
   "rb_extra.page.extras": "Extras",
-  "rb_extra.page.experimental": "Experimental",
-  "rb_extra.page.advanced": "Advanced",
 
   "rb_extra.cloud_height.name": "Cloud Height",
   "rb_extra.cloud_height.tooltip": "Raises cloud height.",
@@ -39,7 +36,9 @@
   "rb_extra.display_fps.name": "Display FPS",
   "rb_extra.display_fps.tooltip": "Displays the current FPS. Advanced mode also displays minimum FPS, as well as 15 second average FPS, which are more useful for judging performance.",
   "rb_extra.position_fps.name": "FPS Display Position",
-  "rb_extra.position_fps.tooltip": "Offsets the FPS display a few pixels",
+  "rb_extra.position_fps.tooltip": "Offsets the FPS display from the top-left or top-right corner of the screen.",
+  "rb_extra.right_align_fps.name": "Right-align FPS Display",
+  "rb_extra.right_align_fps.tooltip":"Aligns the FPS display to the right side of the screen. Useful if you have other overlays that show on the left side of the screen. Does nothing if the Display FPS option is set to Off.",
 
   "rb_extra.enable_max_entity_distance.name": "Enable Max Entity Distance",
   "rb_extra.enable_max_entity_distance.tooltip": "Toggles off entity culling.",
@@ -52,8 +51,6 @@
   "rb_extra.vertical_tile_distance.name": "Vertical Tile Distance",
   "rb_extra.vertical_tile_distance.tooltip": "Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance.",
 
-  "rb_extra.lower_zoom_sensitivity.name": "Lower Zoom Sensitivity",
-  "rb_extra.lower_zoom_sensitivity.tooltip": "Lowers your sensitivity when zooming to make it feel more consistent.",
   "rb_extra.zoom_scrolling.name": "Zoom Scrolling",
   "rb_extra.zoom_scrolling.tooltip": "Allows using scroll wheel to adjust zoom amount.",
   "rb_extra.zoom_transition_mode.name": "Zoom Transition Mode",
