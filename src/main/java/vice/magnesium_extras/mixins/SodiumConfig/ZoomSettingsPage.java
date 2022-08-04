@@ -49,8 +49,8 @@ public abstract class ZoomSettingsPage
         //        .build();
 
         OptionImpl<SodiumGameOptions, Boolean> zoomScrolling = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(I18n.get("extras.zoom.scrolling.title"))
-                .setTooltip(I18n.get("extras.zoom.scrolling.desc"))
+                .setName(I18n.get("extras.zoom.scrolling.name"))
+                .setTooltip(I18n.get("extras.zoom.scrolling.tooltip"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.zoomScrolling.set(value),
@@ -59,8 +59,8 @@ public abstract class ZoomSettingsPage
                 .build();
 
         OptionImpl<SodiumGameOptions, Boolean> zoomOverlay = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(I18n.get("extras.zoom.overlay.title"))
-                .setTooltip(I18n.get("extras.zoom.overlay.desc"))
+                .setName(I18n.get("extras.zoom.overlay.name"))
+                .setTooltip(I18n.get("extras.zoom.overlay.tooltip"))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.zoomOverlay.set(value),
@@ -79,8 +79,8 @@ public abstract class ZoomSettingsPage
 
 
         Option<MagnesiumExtrasConfig.ZoomTransitionOptions> zoomTransition =  OptionImpl.createBuilder(MagnesiumExtrasConfig.ZoomTransitionOptions.class, sodiumOpts)
-                .setName(I18n.get("extras.zoom.transition.title"))
-                .setTooltip(I18n.get("extras.zoom.transition.desc"))
+                .setName(I18n.get("extras.zoom.transition.name"))
+                .setTooltip(I18n.get("extras.zoom.transition.tooltip"))
                 .setControl(
                         (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomTransitionOptions.class, new String[] {
                         I18n.get("extras.option.off"),
@@ -95,8 +95,8 @@ public abstract class ZoomSettingsPage
                 .build();
 
         Option<MagnesiumExtrasConfig.ZoomModes> zoomMode =  OptionImpl.createBuilder(MagnesiumExtrasConfig.ZoomModes.class, sodiumOpts)
-                .setName(I18n.get("extras.zoom.keybind.title"))
-                .setTooltip(I18n.get("extras.zoom.keybind.desc"))
+                .setName(I18n.get("extras.zoom.keybind.name"))
+                .setTooltip(I18n.get("extras.zoom.keybind.tooltip"))
                 .setControl(
                         (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.ZoomModes.class, new String[] {
                         I18n.get("extras.option.hold"),
