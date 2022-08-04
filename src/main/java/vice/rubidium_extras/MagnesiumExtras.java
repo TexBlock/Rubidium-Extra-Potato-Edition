@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vice.rubidium_extras.config.MagnesiumExtrasConfig;
 
-@Mod("rubidium_extras")
+@Mod(MagnesiumExtras.MODID)
 public class MagnesiumExtras
 {
     public static final String MODID = "rubidium_extras";

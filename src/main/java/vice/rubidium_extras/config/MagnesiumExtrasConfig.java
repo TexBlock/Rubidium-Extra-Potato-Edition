@@ -5,8 +5,9 @@ import com.electronwill.nightconfig.core.io.WritingMode;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.network.chat.Component;
 //import net.minecraft.network.chat.TextComponent;
-import net.minecraft.client.resources.language.I18n;
+//import net.minecraft.client.resources.language.I18n;
 import net.minecraftforge.common.ForgeConfigSpec;
+
 import java.nio.file.Path;
 
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
@@ -18,6 +19,7 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<String> fadeInQuality;
 
     public static ConfigValue<String> fpsCounterMode;
+    public static ConfigValue<Boolean> fpsCounterAlignRight;
     public static ConfigValue<Integer> fpsCounterPosition;
     public static ForgeConfigSpec.ConfigValue<Integer> cloudHeight;
 
@@ -80,6 +82,7 @@ public class MagnesiumExtrasConfig
 
         builder.Block("FPS Counter", b -> {
             fpsCounterMode = b.define("Display FPS Counter (OFF, SIMPLE, ADVANCED)", "ADVANCED");
+            fpsCounterAlignRight = b.define("Right-align FPS Counter", false);
             fpsCounterPosition = b.define("FPS Counter Distance", 12);
         });
 
@@ -149,7 +152,7 @@ public class MagnesiumExtrasConfig
         }
 
         public Component getLocalizedName() {
-            return new TextComponent(this.name);
+            return Component.nullToEmpty(this.name);
         }
     }
 
@@ -167,7 +170,7 @@ public class MagnesiumExtrasConfig
 
         public Component getLocalizedName() {
 
-            return new TextComponent(this.name);
+            return Component.nullToEmpty(this.name);
         }
     }
 

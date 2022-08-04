@@ -24,12 +24,12 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import vice.rubidium_extras.config.MagnesiumExtrasConfig;
-import vice.rubidium_extras.mixins.BorderlessFullscreen.MainWindowAccessor;
+//import vice.rubidium_extras.mixins.BorderlessFullscreen.MainWindowAccessor;
 import net.minecraft.client.resources.language.I18n;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+//import java.util.Objects;
 
 @Mixin(SodiumGameOptionPages.class)
 public class SodiumGameOptionsMixin
@@ -38,7 +38,7 @@ public class SodiumGameOptionsMixin
 
     //@Inject(at = @At("HEAD"), method = "experimental", remap = false, cancellable = true)
 
-    @Shadow @Final private static MinecraftOptionsStorage vanillaOpts;
+    //@Shadow @Final private static MinecraftOptionsStorage vanillaOpts;
 
     //private static void experimental(CallbackInfoReturnable<OptionPage> cir)
     @Inject(
@@ -84,8 +84,19 @@ public class SodiumGameOptionsMixin
                         (opts) -> MagnesiumExtrasConfig.fpsCounterPosition.get())
                 .build();
 
+        OptionImpl<SodiumGameOptions, Boolean> displayFpsAlignRight = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
+                .setName(Component.nullToEmpty("Right-align FPS Display"))
+                .setTooltip(Component.nullToEmpty("Aligns the FPS display to the right side of the screen. Useful if you have other overlays that show on the left side of the screen. Does nothing if the Display FPS option is set to Off."))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                        (options, value) -> MagnesiumExtrasConfig.fpsCounterAlignRight.set(value),
+                        (options) -> MagnesiumExtrasConfig.fpsCounterAlignRight.get())
+                .setImpact(OptionImpact.LOW)
+                .build();
+
         groups.add(OptionGroup.createBuilder()
                 .add(displayFps)
+                .add(displayFpsAlignRight)
                 .add(displayFpsPos)
                 .build());
 
@@ -264,7 +275,7 @@ public class SodiumGameOptionsMixin
         );
     }
 
-
+/*
     @Inject(
             method = "general",
             at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableList;copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;"),
@@ -328,7 +339,7 @@ public class SodiumGameOptionsMixin
         groups.clear();
         groups.addAll(newList);
     }
-
+*/
     @ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "sodium.options.pages.advanced"))
     private static String ChangeCategoryName(String old) {
         return I18n.get("rb_extra.page.extras");

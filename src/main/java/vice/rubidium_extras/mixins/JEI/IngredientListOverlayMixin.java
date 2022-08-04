@@ -1,5 +1,5 @@
 package vice.rubidium_extras.mixins.JEI;
-
+/*
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.gui.handlers.IGuiProperties;
 import mezz.jei.common.gui.elements.GuiIconToggleButton;
@@ -59,3 +59,5 @@ public class IngredientListOverlayMixin
         }
     }
 }
+
+ */
