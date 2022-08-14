@@ -230,7 +230,7 @@ public class SodiumGameOptionsMixin
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
                 .setName(Component.nullToEmpty(I18n.get("rb_extra.vertical_entity_distance.name")))
                 .setTooltip(Component.nullToEmpty(I18n.get("rb_extra.vertical_entity_distance.tooltip")))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable(I18n.get("rb_extra.options.unit.blocks"))))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("rb_extra.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.get())
