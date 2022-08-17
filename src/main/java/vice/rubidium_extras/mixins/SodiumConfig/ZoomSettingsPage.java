@@ -1,6 +1,6 @@
 package vice.rubidium_extras.mixins.SodiumConfig;
 
-
+/*
 import com.google.common.collect.ImmutableList;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
@@ -114,3 +114,4 @@ public abstract class ZoomSettingsPage
         pages.add(new OptionPage(Component.nullToEmpty(I18n.get("rb_extra.page.zoom")), ImmutableList.copyOf(groups)));
     }
 }
+*/

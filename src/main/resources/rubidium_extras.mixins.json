@@ -18,7 +18,6 @@
     "FrameCounter.FpsAccessorMixin",
     "FrameCounter.FrameCounterMixin",
     "SodiumConfig.SodiumGUIMixin",
-    "SodiumConfig.ZoomSettingsPage",
     "TotalDarkness.MixinGameRenderer",
     "TotalDarkness.MixinLightmapTextureManager",
     "TotalDarkness.MixinNativeImageBackedTexture",

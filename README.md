@@ -7,7 +7,7 @@
 [English](README-EN.md) / 简体中文 
 
 ### 这是干什么的？
-Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。有问题请到issues反馈。
+Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化并有一些修复。有问题请到issues反馈。
 
 ### 链接
 原Repo : [TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
