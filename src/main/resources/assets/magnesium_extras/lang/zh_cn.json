@@ -54,6 +54,8 @@
     "extras.max_tile_distance.name": "最大实体方块渲染距离",
     "extras.max_tile_distance.tooltip": "隐藏此范围的实体方块. 巨大的性能提升, 尤其是在大型红石机器周围",
 
+    "extras.zoom.lower_sensitivity.name": "降低缩放灵敏度",
+    "extras.zoom.lower_sensitivity.tooltip": "缩放时降低灵敏度以使其感觉更加一致。",
     "extras.zoom.scrolling.name": "缩放滚动",
     "extras.zoom.scrolling.tooltip": "允许使用滚轮来调整缩放量。",
     "extras.zoom.transition.name": "缩放过渡模式",
@@ -62,7 +64,9 @@
     "extras.zoom.keybind.tooltip": "按住 - 仅在快捷键按下时进行缩放。\n切换 - 锁定变焦，直到你再次按下快捷键\n保持 - 总是缩放，如果你出于某种原因想这样。",
     "extras.zoom.overlay.name": "缩放晕影",
     "extras.zoom.overlay.tooltip": "缩放时渲染晕影覆盖",
-  
+    "extras.zoom.cinematic_camera.name": "电影摄影机选项",
+    "extras.zoom.cinematic_camera.tooltip": "电影摄影机模式",
+
     "extras.ture_darkness.options.name": "真实黑暗",
     "extras.ture_darkness.options.tooltip": "使世界的其他部分更加真实地黑暗。不影响白天或火把的光。",
     "extras.ture_darkness.mode.name": "真实黑暗模式",
