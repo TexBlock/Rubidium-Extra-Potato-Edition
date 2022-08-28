@@ -53,6 +53,8 @@
   "extras.max_tile_distance.name": "Max Tile Distance",
   "extras.max_tile_distance.tooltip": "Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines.",
 
+  "extras.zoom.lower_sensitivity.name": "Lower Zoom Sensitivity",
+  "extras.zoom.lower_sensitivity.tooltip": "Lowers your sensitivity when zooming to make it feel more consistent.",
   "extras.zoom.scrolling.name": "Zoom Scrolling",
   "extras.zoom.scrolling.tooltip": "Allows using scroll wheel to adjust zoom amount.",
   "extras.zoom.transition.name": "Zoom Transition Mode",
@@ -61,6 +63,8 @@
   "extras.zoom.keybind.tooltip": "Hold - Zoom only while the key is down.\nToggle - Lock zoom until you press the key again\nPersistent - Always zoom, if you want that, for some reason.",
   "extras.zoom.overlay.name": "Zoom Overlay",
   "extras.zoom.overlay.tooltip": "Renders a vignette overlay when zooming.",
+  "extras.zoom.cinematic_camera.name": "Cinematic Camera Options",
+  "extras.zoom.cinematic_camera.tooltip": "Cinematic Camera Mode",
 
   "extras.ture_darkness.options.name": "True Darkness",
   "extras.ture_darkness.options.tooltip": "Makes the rest of the world more realistically dark. Does not effect daytime or torch light.",

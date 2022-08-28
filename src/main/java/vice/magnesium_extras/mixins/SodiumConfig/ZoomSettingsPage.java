@@ -38,15 +38,15 @@ public abstract class ZoomSettingsPage
     {
         List<OptionGroup> groups = new ArrayList();
 
-        //OptionImpl<SodiumGameOptions, Boolean> lowerSensitivity = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-        //        .setName("Lower Zoom Sensitivity")
-        //        .setTooltip("Lowers your sensitivity when zooming to make it feel more consistent.")
-        //        .setControl(TickBoxControl::new)
-        //        .setBinding(
-        //                (options, value) -> MagnesiumExtrasConfig.lowerZoomSensitivity.set(value),
-        //                (options) -> MagnesiumExtrasConfig.lowerZoomSensitivity.get())
-        //        .setImpact(OptionImpact.LOW)
-        //        .build();
+        OptionImpl<SodiumGameOptions, Boolean> lowerSensitivity = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
+                .setName(I18n.get("extras.zoom.lower_sensitivity.name"))
+                .setTooltip(I18n.get("extras.zoom.lower_sensitivity.tooltip"))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                        (options, value) -> MagnesiumExtrasConfig.lowerZoomSensitivity.set(value),
+                        (options) -> MagnesiumExtrasConfig.lowerZoomSensitivity.get())
+                .setImpact(OptionImpact.LOW)
+                .build();
 
         OptionImpl<SodiumGameOptions, Boolean> zoomScrolling = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
                 .setName(I18n.get("extras.zoom.scrolling.name"))
@@ -70,7 +70,7 @@ public abstract class ZoomSettingsPage
 
         groups.add(OptionGroup
                 .createBuilder()
-                //.add(lowerSensitivity)
+                .add(lowerSensitivity)
                 .add(zoomScrolling)
                 .add(zoomOverlay)
                 .build()
@@ -111,21 +111,25 @@ public abstract class ZoomSettingsPage
                 .setImpact(OptionImpact.LOW)
                 .build();
 
-        //Option<MagnesiumExtrasConfig.CinematicCameraOptions> cinematicCameraMode =  OptionImpl.createBuilder(MagnesiumExtrasConfig.CinematicCameraOptions.class, sodiumOpts)
-        //        .setName("Cinematic Camera Options")
-        //        .setTooltip("Cinematic Camera Mode")
-        //        .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.CinematicCameraOptions.class, new String[] { "Off", "Vanilla", "Multiplied"}))
-        //        .setBinding(
-        //                (opts, value) -> MagnesiumExtrasConfig.cinematicCameraMode.set(value.toString()),
-        //                (opts) -> MagnesiumExtrasConfig.CinematicCameraOptions.valueOf(MagnesiumExtrasConfig.cinematicCameraMode.get()))
-        //        .setImpact(OptionImpact.LOW)
-        //        .build();
+        Option<MagnesiumExtrasConfig.CinematicCameraOptions> cinematicCameraMode =  OptionImpl.createBuilder(MagnesiumExtrasConfig.CinematicCameraOptions.class, sodiumOpts)
+                .setName(I18n.get("extras.zoom.cinematic_camera.name"))
+                .setTooltip(I18n.get("extras.zoom.cinematic_camera.tooltip"))
+                .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.CinematicCameraOptions.class, new String[] {
+                        I18n.get("extras.option.off"),
+                        I18n.get("extras.option.vanilla"),
+                        I18n.get("extras.option.multiplied")
+                }))
+                .setBinding(
+                        (opts, value) -> MagnesiumExtrasConfig.cinematicCameraMode.set(value.toString()),
+                        (opts) -> MagnesiumExtrasConfig.CinematicCameraOptions.valueOf(MagnesiumExtrasConfig.cinematicCameraMode.get()))
+                .setImpact(OptionImpact.LOW)
+                .build();
 
         groups.add(OptionGroup
                 .createBuilder()
                 .add(zoomTransition)
                 .add(zoomMode)
-                //.add(cinematicCameraMode)
+                .add(cinematicCameraMode)
                 .build()
         );
 

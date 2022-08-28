@@ -12,8 +12,8 @@
     "FadeInChunks.UnsafeChunkDrawCallVectorMixin",
     "fog.MixinSodiumWorldRenderer",
     "performance.MultiDrawChunkRenderBackendMixin",
-    "SodiumConfig.SodiumFullscreenOptionsMixin",
     "SodiumConfig.SodiumGameOptionsMixin",
+    "SodiumConfig.SodiumSettingsMixin",
     "Zoom.MouseMixin"
   ],
   "minVersion": "0.8",
