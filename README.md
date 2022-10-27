@@ -6,7 +6,7 @@
 
 [English](README-EN.md) / 简体中文 
 
-我们正在计划将此模组和RubidiumExtra结合，保留了部分功能，目前此项目命名为 [RubidiumToolkit](https://github.com/TexTrueStudio/RubidiumToolkit-Next) 。
+我们正在计划将此模组和Magnesium/Rubidium Dynamic Lights结合，保留了部分功能，目前此项目命名为 [RubidiumToolkit](https://github.com/TexTrueStudio/RubidiumToolkit-Next) 。
 
 ### 这是干什么的？
 Magnesium / Rubidium Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化并有一些修复。有问题请到issues反馈。
