@@ -29,8 +29,6 @@
   
     "extras.cloud_height.name": "云层高度",
     "extras.cloud_height.tooltip": "提高云层高度。",
-    "extras.misc.chunk_fade_quality.name": "区块淡入品质",
-    "extras.misc.chunk_fade_quality.tooltip": "控制区块淡入的速度。对性能没有影响，高品质只是需要更长的时间，但看起来更酷一些。",
     "extras.fog.name": "启用雾",
     "extras.fog.tooltip": "关掉主世界所有的雾。",
     "extras.full_screen_mode.name": "全屏模式",

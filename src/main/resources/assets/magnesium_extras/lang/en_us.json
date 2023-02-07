@@ -28,8 +28,6 @@
 
   "extras.cloud_height.name": "Cloud Height",
   "extras.cloud_height.tooltip": "Raises cloud height.",
-  "extras.misc.chunk_fade_quality.name": "Chunk Fade In Quality",
-  "extras.misc.chunk_fade_quality.tooltip": "Controls how fast chunks fade in. No performance hit, Fancy simply takes longer, but looks a bit cooler.",
   "extras.fog.name": "Enable fog",
   "extras.fog.tooltip": "Toggles off all fog in the overworld.",
   "extras.full_screen_mode.name": "Fullscreen Mode",
