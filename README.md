@@ -31,4 +31,4 @@ Why don't you delete "FPS Counter" feature?
 
 ________________
 
-I make this version for my modpack, [Tankoptimization](https://github.com/MCTeamPotato/Tankoptimization), best 1.16.5 Forge perfomance pack.
+I made this version for my modpack, [Tankoptimization](https://github.com/MCTeamPotato/Tankoptimization), best 1.16.5 Forge performance pack.
