@@ -15,7 +15,6 @@ public class DebugOverlayImprovements
         if (event.getType() != RenderGameOverlayEvent.ElementType.DEBUG)
             return;
 
-        // cancel rendering text if chart is displaying
         val minecraft = Minecraft.getInstance();
         if (minecraft.options.renderFpsChart)
             event.setCanceled(true);
