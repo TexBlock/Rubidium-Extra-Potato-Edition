@@ -15,7 +15,9 @@ So, I just delete some features of Magnesium/Rubidium Extra and now you can use 
 Other things removed: Borderless Fullscreen, True Darkness.
 
 You should use: 
+
 https://www.curseforge.com/minecraft/mc-mods/windowed-fullscreen
+
 https://www.curseforge.com/minecraft/mc-mods/total-darkness
 
 # Extra Info
