@@ -90,6 +90,63 @@ public class SodiumSettingsMixin
                 .add(displayFpsPos)
                 .build());
 
+
+
+
+        OptionImpl<SodiumGameOptions, Boolean> totalDarkness = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
+                .setName(I18n.get("extras.ture_darkness.options.name"))
+                .setTooltip(I18n.get("extras.ture_darkness.options.tooltip"))
+                .setControl(TickBoxControl::new)
+                .setBinding(
+                        (options, value) -> MagnesiumExtrasConfig.trueDarknessEnabled.set(value),
+                        (options) -> MagnesiumExtrasConfig.trueDarknessEnabled.get())
+                .setImpact(OptionImpact.LOW)
+                .build();
+
+        Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
+                .setName(I18n.get("extras.ture_darkness.mode.name"))
+                .setTooltip(I18n.get("extras.ture_darkness.mode.tooltip"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new String[] {
+                        I18n.get("extras.option.pitch_black"),
+                        I18n.get("extras.option.really_dark"),
+                        I18n.get("extras.option.dark"),
+                        I18n.get("extras.option.dim")
+                        }
+                        )
+                )
+                .setBinding(
+                        (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
+                        (opts) -> MagnesiumExtrasConfig.darknessOption.get())
+                .setImpact(OptionImpact.LOW)
+                .build();
+
+        groups.add(OptionGroup.createBuilder()
+                .add(totalDarkness)
+                .add(totalDarknessSetting)
+                .build());
+
+
+
+
+
+        Option<MagnesiumExtrasConfig.Quality> fadeInQuality =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Quality.class, sodiumOpts)
+                .setName(I18n.get("extras.misc.chunk_fade_quality.name"))
+                .setTooltip(I18n.get("extras.misc.chunk_fade_quality.tooltip"))
+                .setControl(
+                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] {
+                        I18n.get("extras.option.off"),
+                        I18n.get("extras.option.fast"),
+                        I18n.get("extras.option.fancy")
+                        }
+                        )
+                )
+                .setBinding(
+                        (opts, value) -> MagnesiumExtrasConfig.fadeInQuality.set(value.toString()),
+                        (opts) -> MagnesiumExtrasConfig.Quality.valueOf(MagnesiumExtrasConfig.fadeInQuality.get()))
+                .setImpact(OptionImpact.LOW)
+                .build();
+
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class,sodiumOpts)
                 .setName(I18n.get("extras.fog.name"))
                 .setTooltip(I18n.get("extras.fog.tooltip"))
@@ -105,13 +162,16 @@ public class SodiumSettingsMixin
                 .setTooltip(I18n.get("extras.cloud_height.tooltip"))
                 .setControl((option) -> new SliderControl(option, 64, 256, 4, ControlValueFormatter.quantity(I18n.get("extras.option.unit.blocks"))))
                 .setBinding(
-                        (options, value) -> MagnesiumExtrasConfig.cloudHeight.set(value),
+                        (options, value) -> {
+                            MagnesiumExtrasConfig.cloudHeight.set(value);
+                        },
                         (options) ->  MagnesiumExtrasConfig.cloudHeight.get())
                 .setImpact(OptionImpact.LOW)
                 .build();
 
 
         groups.add(OptionGroup.createBuilder()
+                .add(fadeInQuality)
                 .add(fog)
                 .add(cloudHeight)
                 .build());
@@ -202,4 +262,9 @@ public class SodiumSettingsMixin
         );
         pages.add(new OptionPage(I18n.get("extras.extras.options.name"),ImmutableList.copyOf(groups)));
     }
+
+    //@ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "Advanced"))
+    //private static String ChangeCategoryName(String old) {
+    //    return I18n.get("extras.extras.options.name");
+    //}
 }

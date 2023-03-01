@@ -5,5 +5,5 @@ import net.minecraft.world.World;
 
 public interface IChunkClaimProvider
 {
-    boolean isInClaimedChunk(World world, BlockPos pos);
+    public boolean isInClaimedChunk(World world, BlockPos pos);
 }

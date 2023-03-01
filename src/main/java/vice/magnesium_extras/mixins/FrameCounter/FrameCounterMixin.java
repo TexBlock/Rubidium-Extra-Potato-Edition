@@ -21,7 +21,7 @@ public class FrameCounterMixin
 
     private int lastMeasuredFPS;
     private String runningAverageFPS;
-    private final Queue<Integer> fpsRunningAverageQueue = new LinkedList<>();
+    private final Queue<Integer> fpsRunningAverageQueue = new LinkedList<Integer>();
 
     @Inject(at = @At("TAIL"), method = "render")
     public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info)
@@ -35,7 +35,7 @@ public class FrameCounterMixin
         if (client.options.renderDebug && !client.options.renderFpsChart)
             return;
 
-        String displayString;
+        String displayString = null;
         int fps = vice.magnesium_extras.mixins.FrameCounter.FpsAccessorMixin.getFPS();
 
         if (Objects.equals(MagnesiumExtrasConfig.fpsCounterMode.get(), "ADVANCED"))
@@ -45,7 +45,7 @@ public class FrameCounterMixin
 
         boolean textAlignRight = MagnesiumExtrasConfig.fpsCounterAlignRight.get();
 
-        float textPos = MagnesiumExtrasConfig.fpsCounterPosition.get();
+        float textPos = (int)MagnesiumExtrasConfig.fpsCounterPosition.get();
 
         int textAlpha = 200;
         int textColor = 0xFFFFFF;
@@ -104,7 +104,7 @@ public class FrameCounterMixin
                 frameCount++;
             }
 
-            int average = totalFps / frameCount;
+            int average = (int) (totalFps / frameCount);
             runningAverageFPS = String.valueOf(average);
         }
 

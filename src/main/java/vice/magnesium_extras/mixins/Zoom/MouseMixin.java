@@ -58,7 +58,7 @@ public class MouseMixin {
 		method = "turnPlayer",
 		ordinal = 2
 	)
-	private double applyReduceSensitivity(double value) {
+	private double applyReduceSensitivity(double g) {
 		double modifiedMouseSensitivity = this.minecraft.options.sensitivity;
 
 		if (MagnesiumExtrasConfig.lowerZoomSensitivity.get())
@@ -71,9 +71,9 @@ public class MouseMixin {
 		}
 
 		double appliedMouseSensitivity = modifiedMouseSensitivity * 0.6 + 0.2;
-		value = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
-		this.adjustedG = value;
-		return value;
+		g = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
+		this.adjustedG = g;
+		return g;
 	}
 	
 	//Extracts the e variable for the cinematic cameras.
@@ -174,7 +174,7 @@ public class MouseMixin {
 			cancellable = true,
 			locals = LocalCapture.CAPTURE_FAILHARD
 	)
-	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, int p_198023_5_, boolean bl, int i, boolean[] aboolean) {
+	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i) {
 		if (MagnesiumExtrasConfig.zoomScrolling.get()) {
 			if (MagnesiumExtrasConfig.zoomMode.get().equals(MagnesiumExtrasConfig.ZoomModes.PERSISTENT.toString())) {
 				if (!KeyboardInput.zoomKey.isDown()) {

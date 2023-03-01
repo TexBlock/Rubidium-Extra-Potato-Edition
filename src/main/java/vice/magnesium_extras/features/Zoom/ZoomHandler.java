@@ -4,6 +4,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import vice.magnesium_extras.MagnesiumExtras;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 import vice.magnesium_extras.keybinds.KeyboardInput;
 

@@ -13,7 +13,7 @@ import vice.magnesium_extras.util.DistanceUtility;
 @Mixin(EntityRendererManager.class)
 public class MaxDistanceEntity
 {
-    @Inject(at = @At("HEAD"), method = "shouldRender")
+    @Inject(at = @At("HEAD"), method = "shouldRender", cancellable = true)
     public <E extends Entity> void shouldDoRender(E entity, ClippingHelper clippingHelper, double cameraX, double cameraY, double cameraZ, CallbackInfoReturnable<Boolean> cir)
     {
         if (!MagnesiumExtrasConfig.enableDistanceChecks.get())

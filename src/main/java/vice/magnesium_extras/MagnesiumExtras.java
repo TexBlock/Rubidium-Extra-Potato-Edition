@@ -1,20 +1,32 @@
 package vice.magnesium_extras;
 
+import dev.ftb.mods.ftbchunks.data.ClaimedChunk;
+import dev.ftb.mods.ftbchunks.data.FTBChunksAPI;
+import dev.ftb.mods.ftblibrary.math.ChunkDimPos;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.storage.SodiumOptionsStorage;
+import net.minecraft.block.Block;
+import net.minecraft.client.AbstractOption;
+import net.minecraft.fluid.Fluid;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.fml.network.FMLNetworkConstants;
+import net.minecraftforge.registries.IRegistryDelegate;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
+import vice.magnesium_extras.features.Zoom.ZoomUtils;
+import vice.magnesium_extras.keybinds.KeyboardInput;
 import vice.magnesium_extras.util.chunks.DummyChunkClaimProvider;
 import vice.magnesium_extras.util.chunks.IChunkClaimProvider;
 
@@ -32,6 +44,8 @@ public class MagnesiumExtras
         MinecraftForge.EVENT_BUS.register(this);
 
         MagnesiumExtrasConfig.loadConfig(FMLPaths.CONFIGDIR.get().resolve("mgrb_extras.toml"));
+
+        //MinecraftForge.EVENT_BUS.register(this);
 
         ModLoadingContext.get()
                 .registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));

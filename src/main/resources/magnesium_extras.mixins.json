@@ -4,13 +4,22 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "magnesium_extras.refmap.json",
   "mixins": [
+    "FadeInChunks.ChunkGraphicsStateMixin",
+    "FadeInChunks.ChunkRenderShaderBackendMixin",
+    "FadeInChunks.GL43ChunkRenderBackendMixin",
+    "FadeInChunks.NioChunkDrawCallVectorMixin",
+    "FadeInChunks.ShaderLoaderMixin",
+    "FadeInChunks.UnsafeChunkDrawCallVectorMixin",
     "fog.MixinSodiumWorldRenderer",
+    "performance.MultiDrawChunkRenderBackendMixin",
     "SodiumConfig.SodiumGameOptionsMixin",
     "SodiumConfig.SodiumSettingsMixin",
     "Zoom.MouseMixin"
   ],
   "minVersion": "0.8",
   "client": [
+    "BorderlessFullscreen.MainWindowAccessor",
+    "BorderlessFullscreen.WindowMixin",
     "CloudHeight.CloudHeightMixin",
     "EntityDistance.MaxDistanceEntity",
     "EntityDistance.MaxDistanceTileEntity",
@@ -18,6 +27,11 @@
     "FrameCounter.FrameCounterMixin",
     "performance.RenderTypeLookupMixin",
     "SodiumConfig.ZoomSettingsPage",
+    "TotalDarkness.MixinGameRenderer",
+    "TotalDarkness.MixinLightmapTextureManager",
+    "TotalDarkness.MixinNativeImageBackedTexture",
+    "TotalDarkness.MixinTheEndDimension",
+    "TotalDarkness.MixinTheNetherDimension",
     "Zoom.GameRendererMixin"
   ]
 }

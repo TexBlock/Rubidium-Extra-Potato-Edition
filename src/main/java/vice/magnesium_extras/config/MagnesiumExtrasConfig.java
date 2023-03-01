@@ -12,6 +12,8 @@ public class MagnesiumExtrasConfig
 {
     public static ForgeConfigSpec ConfigSpec;
 
+    public static ConfigValue<String> fadeInQuality;
+
     public static ConfigValue<String> fpsCounterMode;
     public static ConfigValue<Boolean> fpsCounterAlignRight;
     public static ConfigValue<Integer> fpsCounterPosition;
@@ -37,6 +39,15 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<Boolean> zoomScrolling;
     public static ConfigValue<Boolean> zoomOverlay;
 
+
+    public static ForgeConfigSpec.EnumValue<FullscreenMode> fullScreenMode;
+
+
+    // Total Darkness
+    public static double darkNetherFogEffective;
+    public static double darkEndFogEffective;
+    public static ForgeConfigSpec.BooleanValue trueDarknessEnabled;
+    public static ForgeConfigSpec.EnumValue<DarknessOption> darknessOption;
     //advanced
     public static ForgeConfigSpec.DoubleValue darkNetherFogConfigured;
     public static ForgeConfigSpec.BooleanValue darkEnd;
@@ -58,7 +69,9 @@ public class MagnesiumExtrasConfig
 
         builder.Block("Misc", b -> {
             cloudHeight = b.define("Cloud Height [Raw, Default 196]", 196);
+            fadeInQuality =  b.define("Chunk Fade In Quality (OFF, FAST, FANCY)", "FANCY");
             fog = b.define("Render Fog", true);
+            fullScreenMode = b.defineEnum("Use Borderless Fullscreen", FullscreenMode.FULLSCREEN);
         });
 
         builder.Block("FPS Counter", b -> {
@@ -84,7 +97,31 @@ public class MagnesiumExtrasConfig
             zoomMode = b.define("Zoom Transition Mode (TOGGLE, HOLD, PERSISTENT)", ZoomModes.HOLD.toString());
             cinematicCameraMode = b.define("Cinematic Camera Mode (OFF, VANILLA, MULTIPLIED)", CinematicCameraOptions.OFF.toString());
             zoomOverlay = b.define("Zoom Overlay?", true);
+            //zoomValues = b.define("Zoom Advanced Values", new ZoomValues());
         });
+
+        builder.Block("True Darkness", b -> {
+            trueDarknessEnabled = b.define("Use True Darkness", true);
+            darknessOption = b.defineEnum("Darkness Setting (PITCH_BLACK, REALLY_DARK, DARK, DIM)", DarknessOption.DARK);
+
+            builder.Block("Advanced", b2 -> {
+                blockLightOnly = b2.define("Only Effect Block Lighting", false);
+                ignoreMoonPhase = b2.define("Ignore Moon Light", false);
+                minimumMoonLevel = b2.defineInRange("Minimum Moon Brightness (0->1)", 0, 0, 1d);
+                maximumMoonLevel = b2.defineInRange("Maximum Moon Brightness (0->1)", 0.25d, 0, 1d);
+            });
+
+            builder.Block("Dimension Settings", b2 -> {
+                darkOverworld = b2.define("Dark Overworld?", true);
+                darkDefault = b2.define("Dark By Default?", false);
+                darkNether = b2.define("Dark Nether?", false);
+                darkNetherFogConfigured = b2.defineInRange("Dark Nether Fog Brightness (0->1)", .5, 0, 1d);
+                darkEnd = b2.define("Dark End?", false);
+                darkEndFogConfigured = b.defineInRange("Dark End Fog Brightness (0->1)", 0, 0, 1d);
+                darkSkyless = b2.define("Dark If No Skylight?", false);
+            });
+        });
+
         ConfigSpec = builder.Save();
     }
 
@@ -96,7 +133,7 @@ public class MagnesiumExtrasConfig
     }
 
 
-    public enum Complexity implements TextProvider
+    public static enum Complexity implements TextProvider
     {
         OFF("Off"),
         SIMPLE("Simple"),
@@ -104,7 +141,7 @@ public class MagnesiumExtrasConfig
 
         private final String name;
 
-        Complexity(String name) {
+        private Complexity(String name) {
             this.name = name;
         }
 
@@ -113,7 +150,7 @@ public class MagnesiumExtrasConfig
         }
     }
 
-    public enum Quality implements TextProvider
+    public static enum Quality implements TextProvider
     {
         OFF("Off"),
         FAST("Fast"),
@@ -121,13 +158,32 @@ public class MagnesiumExtrasConfig
 
         private final String name;
 
-        Quality(String name) {
+        private Quality(String name) {
             this.name = name;
         }
 
         public String getLocalizedName() {
             return this.name;
         }
+    }
+
+    public enum DarknessOption {
+        PITCH_BLACK(0f),
+        REALLY_DARK (0.04f),
+        DARK(0.08f),
+        DIM(0.12f);
+
+        public final float value;
+
+        private DarknessOption(float value) {
+            this.value = value;
+        }
+    }
+
+    public enum FullscreenMode {
+        WINDOWED,
+        BORDERLESS,
+        FULLSCREEN
     }
 
     public enum ZoomTransitionOptions {

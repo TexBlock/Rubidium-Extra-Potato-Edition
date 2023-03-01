@@ -1,34 +1,19 @@
-# Rubidium Extra: Potato Edition
+<p align="center">
+ <img width="100px" src="icon/MgRb-Extra.png" align="center" alt="Magnesium/Rubidium-Extras Logo" />
+ <h2 align="center">Magnesium/Rubidium-Extras i18n</h2>
+ <p align="center"></p>
 
-**Rubidium Extra: Potato Edition** is a fork of MgRbExtras-i18n by TexTrue, which is a fork of Magnesium/Rubidium Extra by TeamDeusVult.
+[English](README-EN.md) / 简体中文 
 
-# Why?
+### 这是干什么的？
+Magnesium/Rubidium-Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。翻译问题请到issues反馈。
+此分支支持 Magnesium 和 Rubidium ，1.16-i18n分支和1.16-Rubidium分支将被放弃。
 
-I want to use Rubidium's **"Use Chunk Multi-draw"** function to increase fps but Magnesium/Rubidium Extra breaks it.
+### 链接
+原Repo : [TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
 
-MgRbExtras-i18n didn't fix it, as TexTrue just focus on Localization and [Rubidium Toolkit](https://modrinth.com/mod/rubidium-toolkit).
+Magnesium / Rubidium DynamicLights 本地化 : [ForgeModi18n/MgRbDynamicLights-i18n](https://github.com/ForgeModi18n/MgRbDynamicLights-i18n)
 
-But Rubidium Toolkit does have performance issue with [DynamicLightsReforged](https://github.com/TeamDeusVult/DynamicLightsReforged), see [#3](https://github.com/TexTrueStudio/RubidiumToolkit/issues/3).
+镁及其附属汉化[停更] : [Molarczsq/Magnesium-should-be-in-Chinese](https://github.com/Molarczsq/Magnesium-should-be-in-Chinese)
 
-So, I just delete some features of Magnesium/Rubidium Extra and now you can use it with Rubidium!
-
-# Extra Info
-
-Does this version work with [Magnesium](https://beta.curseforge.com/minecraft/mc-mods/sodium-reforged)?
-
-Yes, but I recommend you to use Rubidium instead of Magnesium, cuz Magnesium is abandoned and out-dated.
-________________
-
-Why **"Potato Edition"**?
-
-Cuz my team name: MCTeamPotato.
-
-________________
-
-Why don't you delete "FPS Counter" feature? 
-
-[Rubidium Extra](https://modrinth.com/mod/rubidium-extra) does have this feature, but it looks ugly and Magnesium/Rubidium Extra's FPS Viewer is more beautiful.
-
-________________
-
-I made this version for my modpack, [Tankoptimization](https://github.com/MCTeamPotato/Tankoptimization), best 1.16.5 Forge performance pack.
+铷及其附属汉化[WIP(?)] : [Molarczsq/Rubidium-Also-needs-Chinese](https://github.com/Molarczsq/Rubidium-Also-needs-Chinese)
