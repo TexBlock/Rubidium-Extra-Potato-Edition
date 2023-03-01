@@ -16,9 +16,6 @@
   "extras.option.really_dark": "Really Dark",
   "extras.option.dark": "Dark",
   "extras.option.dim": "Dim",
-  "extras.option.windowed": "Windowed",
-  "extras.option.borderless": "Borderless",
-  "extras.option.fullscreen": "Fullscreen",
   "extras.option.unit.pixels": " Pixels",
   "extras.option.unit.blocks": " Blocks",
   "extras.zoom.option.name": "Zoom",
@@ -27,8 +24,6 @@
   "extras.cloud_height.tooltip": "Raises cloud height.",
   "extras.fog.name": "Enable fog",
   "extras.fog.tooltip": "Toggles off all fog in the overworld.",
-  "extras.full_screen_mode.name": "Fullscreen Mode",
-  "extras.full_screen_mode.tooltip": "Windowed - the game will display in a small window.\nBorderless - the game will be fullscreened, and locked to your monitor's refresh rate, but allow you to tab out easily.\nFullscreen - the game will display in native fullscreen mode.",
   "extras.display_fps.display.name": "Display FPS",
   "extras.display_fps.display.tooltip": "Displays the current FPS. Advanced mode also displays minimum FPS, as well as 15 second average FPS, which are more useful for judging performance.",
   "extras.display_fps.position.name": "FPS Display Position",
@@ -56,9 +51,5 @@
   "extras.zoom.overlay.name": "Zoom Overlay",
   "extras.zoom.overlay.tooltip": "Renders a vignette overlay when zooming.",
   "extras.zoom.cinematic_camera.name": "Cinematic Camera Options",
-  "extras.zoom.cinematic_camera.tooltip": "Cinematic Camera Mode",
-  "extras.ture_darkness.options.name": "True Darkness",
-  "extras.ture_darkness.options.tooltip": "Makes the rest of the world more realistically dark. Does not effect daytime or torch light.",
-  "extras.ture_darkness.mode.name": "True Darkness Mode",
-  "extras.ture_darkness.mode.tooltip": "Controls how dark is considered true darkness."
+  "extras.zoom.cinematic_camera.tooltip": "Cinematic Camera Mode"
 }

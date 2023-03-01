@@ -12,8 +12,6 @@
   ],
   "minVersion": "0.8",
   "client": [
-    "BorderlessFullscreen.MainWindowAccessor",
-    "BorderlessFullscreen.WindowMixin",
     "CloudHeight.CloudHeightMixin",
     "EntityDistance.MaxDistanceEntity",
     "EntityDistance.MaxDistanceTileEntity",
@@ -21,11 +19,6 @@
     "FrameCounter.FrameCounterMixin",
     "performance.RenderTypeLookupMixin",
     "SodiumConfig.ZoomSettingsPage",
-    "TotalDarkness.MixinGameRenderer",
-    "TotalDarkness.MixinLightmapTextureManager",
-    "TotalDarkness.MixinNativeImageBackedTexture",
-    "TotalDarkness.MixinTheEndDimension",
-    "TotalDarkness.MixinTheNetherDimension",
     "Zoom.GameRendererMixin"
   ]
 }
