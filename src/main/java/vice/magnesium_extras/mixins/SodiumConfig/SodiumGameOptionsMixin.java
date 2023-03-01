@@ -44,8 +44,7 @@ public class SodiumGameOptionsMixin {
             method = "general",
             at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableList;copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;"),
             locals = LocalCapture.CAPTURE_FAILHARD,
-            remap = false,
-            cancellable = true
+            remap = false
     )
     private static void InjectGeneral(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {

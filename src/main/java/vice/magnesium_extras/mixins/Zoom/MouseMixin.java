@@ -58,7 +58,7 @@ public class MouseMixin {
 		method = "turnPlayer",
 		ordinal = 2
 	)
-	private double applyReduceSensitivity(double g) {
+	private double applyReduceSensitivity() {
 		double modifiedMouseSensitivity = this.minecraft.options.sensitivity;
 
 		if (MagnesiumExtrasConfig.lowerZoomSensitivity.get())
@@ -71,7 +71,7 @@ public class MouseMixin {
 		}
 
 		double appliedMouseSensitivity = modifiedMouseSensitivity * 0.6 + 0.2;
-		g = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
+		double g = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
 		this.adjustedG = g;
 		return g;
 	}
@@ -174,7 +174,7 @@ public class MouseMixin {
 			cancellable = true,
 			locals = LocalCapture.CAPTURE_FAILHARD
 	)
-	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i) {
+	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, int p_198023_5_, boolean bl, int i, boolean[] aboolean) {
 		if (MagnesiumExtrasConfig.zoomScrolling.get()) {
 			if (MagnesiumExtrasConfig.zoomMode.get().equals(MagnesiumExtrasConfig.ZoomModes.PERSISTENT.toString())) {
 				if (!KeyboardInput.zoomKey.isDown()) {

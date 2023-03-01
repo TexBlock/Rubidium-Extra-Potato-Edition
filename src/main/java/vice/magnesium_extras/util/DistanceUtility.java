@@ -8,8 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public abstract class DistanceUtility
-{
+public abstract class DistanceUtility {
     public static boolean isNearPlayer(World world, BlockPos pos, int maxHeight, int maxDistanceSquare)
     {
         return isNearPlayerInternal(world, pos.getX(), pos.getY(), pos.getZ(), maxHeight, maxDistanceSquare, false);

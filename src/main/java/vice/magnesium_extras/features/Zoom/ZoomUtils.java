@@ -1,6 +1,5 @@
 package vice.magnesium_extras.features.Zoom;
 
-import net.minecraft.util.math.MathHelper;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 
 //The class that contains most of the logic behind the zoom itself.
@@ -52,24 +51,6 @@ public class ZoomUtils {
 		zoomDivisor = MagnesiumExtrasConfig.zoomValues.zoomDivisor;
 		lastZoomState = true;
 	}
-
-	//The method used for unbinding the "Save Toolbar Activator"
-//	public static void unbindConflictingKey(Minecraft client, boolean userPrompted) {
-//		if (ZoomKeybinds.zoomKey.isDefault()) {
-//			if (client.options.keySaveHotbarActivator.isDefault()) {
-//				if (userPrompted) {
-//					MagnesiumExtras.LOGGER.info("[Ok Zoomer] The \"Save Toolbar Activator\" keybind was occupying C! Unbinding...");
-//				} else {
-//					MagnesiumExtras.LOGGER.info("[Ok Zoomer] The \"Save Toolbar Activator\" keybind was occupying C! Unbinding... This process won't be repeated until specified in the config.");
-//				}
-//				client.options.keySaveToolbarActivator.setBoundKey(InputUtil.UNKNOWN_KEY);
-//				client.options.write();
-//				KeyBinding.updateKeysByCode();
-//			} else {
-//				MagnesiumExtras.LOGGER.info("[Ok Zoomer] No conflicts with the \"Save Toolbar Activator\" keybind was found!");
-//			}
-//		}
-//	}
 
 	//The equivalent of GameRenderer's updateFovMultiplier but for zooming. Used by zoom transitions.
 	public static void updateZoomFovMultiplier() {

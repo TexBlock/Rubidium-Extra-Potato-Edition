@@ -1,3 +1,4 @@
+set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
 @rem
 @rem Copyright 2015 the original author or authors.
 @rem

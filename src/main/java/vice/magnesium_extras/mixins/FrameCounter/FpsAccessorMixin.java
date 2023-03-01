@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface FpsAccessorMixin
 {
     @Accessor("fps")
-    public static int getFPS()
+    static int getFPS()
     {
         return 0;
     }
