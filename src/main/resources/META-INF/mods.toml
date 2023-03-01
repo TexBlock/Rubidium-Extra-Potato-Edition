@@ -1,28 +1,13 @@
 modLoader="javafml" #mandatory
 loaderVersion="[36,)" #mandatory
-license="LGPL"
+license="LGPL-2.1"
 
 [[mods]] #mandatory
 modId="magnesium_extras" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Magnesium/Rubidium Extras" #mandatory
-logoFile="icon.png" #optional
-credits="TeamDeusVult" #optional
-authors="TexTrue,TexStudio-i18nProject" #optional
+credits="TeamDeusVult, TexTrue, TexStudio-i18nProject" #optional
+authors="Team Potato" #optional
 description='''
 Adds Extra Settings to Magnesium/Rubidium.
 '''
-
-[[dependencies.magnesium_extras]] #optional
-    modId="forge" #mandatory
-    mandatory=true #mandatory
-    versionRange="[36,)" #mandatory
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.magnesium_extras]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.5,1.17)"
-    ordering="NONE"
-    side="BOTH"

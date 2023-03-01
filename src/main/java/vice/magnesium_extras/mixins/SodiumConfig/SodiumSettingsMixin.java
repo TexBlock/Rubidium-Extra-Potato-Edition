@@ -129,24 +129,6 @@ public class SodiumSettingsMixin
 
 
 
-
-        Option<MagnesiumExtrasConfig.Quality> fadeInQuality =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Quality.class, sodiumOpts)
-                .setName(I18n.get("extras.misc.chunk_fade_quality.name"))
-                .setTooltip(I18n.get("extras.misc.chunk_fade_quality.tooltip"))
-                .setControl(
-                        (option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.Quality.class, new String[] {
-                        I18n.get("extras.option.off"),
-                        I18n.get("extras.option.fast"),
-                        I18n.get("extras.option.fancy")
-                        }
-                        )
-                )
-                .setBinding(
-                        (opts, value) -> MagnesiumExtrasConfig.fadeInQuality.set(value.toString()),
-                        (opts) -> MagnesiumExtrasConfig.Quality.valueOf(MagnesiumExtrasConfig.fadeInQuality.get()))
-                .setImpact(OptionImpact.LOW)
-                .build();
-
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class,sodiumOpts)
                 .setName(I18n.get("extras.fog.name"))
                 .setTooltip(I18n.get("extras.fog.tooltip"))
@@ -171,7 +153,6 @@ public class SodiumSettingsMixin
 
 
         groups.add(OptionGroup.createBuilder()
-                .add(fadeInQuality)
                 .add(fog)
                 .add(cloudHeight)
                 .build());

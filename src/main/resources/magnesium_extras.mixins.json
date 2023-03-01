@@ -4,12 +4,6 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "magnesium_extras.refmap.json",
   "mixins": [
-    "FadeInChunks.ChunkGraphicsStateMixin",
-    "FadeInChunks.ChunkRenderShaderBackendMixin",
-    "FadeInChunks.GL43ChunkRenderBackendMixin",
-    "FadeInChunks.NioChunkDrawCallVectorMixin",
-    "FadeInChunks.ShaderLoaderMixin",
-    "FadeInChunks.UnsafeChunkDrawCallVectorMixin",
     "fog.MixinSodiumWorldRenderer",
     "performance.MultiDrawChunkRenderBackendMixin",
     "SodiumConfig.SodiumGameOptionsMixin",
