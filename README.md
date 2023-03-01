@@ -1,19 +1,36 @@
-<p align="center">
- <img width="100px" src="icon/MgRb-Extra.png" align="center" alt="Magnesium/Rubidium-Extras Logo" />
- <h2 align="center">Magnesium/Rubidium-Extras i18n</h2>
- <p align="center"></p>
+# Magnesium/Rubidium Extra: Potato Edition
 
-[English](README-EN.md) / 简体中文 
+**Magnesium/Rubidium Extra: Potato Edition** is a fork of MgRbExtras-i18n by TexTrue, which is a fork of Magnesium/Rubidium Extra by TeamDeusVult.
 
-### 这是干什么的？
-Magnesium/Rubidium-Extras 不支持本地化（硬编码），本Fork修改代码让其支持本地化。翻译问题请到issues反馈。
-此分支支持 Magnesium 和 Rubidium ，1.16-i18n分支和1.16-Rubidium分支将被放弃。
+# Why?
 
-### 链接
-原Repo : [TeamDeusVult/MagnesiumExtras](https://github.com/TeamDeusVult/MagnesiumExtras)
+I want to use Rubidium's **"Use Chunk Multi-draw"** function to increase fps but Magnesium/Rubidium Extra breaks it.
 
-Magnesium / Rubidium DynamicLights 本地化 : [ForgeModi18n/MgRbDynamicLights-i18n](https://github.com/ForgeModi18n/MgRbDynamicLights-i18n)
+MgRbExtras-i18n didn't fix it, as TexTrue just focus on Localization and [Rubidium Toolkit](https://modrinth.com/mod/rubidium-toolkit).
 
-镁及其附属汉化[停更] : [Molarczsq/Magnesium-should-be-in-Chinese](https://github.com/Molarczsq/Magnesium-should-be-in-Chinese)
+But Rubidium Toolkit does have performance issue with its Dynamic Lights, see [#3](https://github.com/TexTrueStudio/RubidiumToolkit/issues/3).
 
-铷及其附属汉化[WIP(?)] : [Molarczsq/Rubidium-Also-needs-Chinese](https://github.com/Molarczsq/Rubidium-Also-needs-Chinese)
+So, I just delete some features of Magnesium/Rubidium Extra and now you can use it with Rubidium!
+
+Other things removed: Borderless Fullscreen, True Darkness.
+
+You should use: 
+https://www.curseforge.com/minecraft/mc-mods/windowed-fullscreen
+https://www.curseforge.com/minecraft/mc-mods/total-darkness
+
+# Extra Info
+
+Does this version work with [Magnesium](https://beta.curseforge.com/minecraft/mc-mods/sodium-reforged)?
+
+Yes, but I recommend you to use Rubidium instead of Magnesium, cuz Magnesium is abandoned and out-dated.
+________________
+
+Why **"Potato Edition"**?
+
+Cuz my team name: MCTeamPotato.
+
+________________
+
+Why don't you delete "FPS Counter" feature? 
+
+[Rubidium Extra](https://modrinth.com/mod/rubidium-extra) does have this feature, this mod does work with it too, but it looks ugly and Magnesium/Rubidium Extra's FPS Viewer is more beautiful.
