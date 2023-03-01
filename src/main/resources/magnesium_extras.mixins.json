@@ -6,7 +6,6 @@
   "mixins": [
     "fog.MixinSodiumWorldRenderer",
     "performance.MultiDrawChunkRenderBackendMixin",
-    "SodiumConfig.SodiumGameOptionsMixin",
     "SodiumConfig.SodiumSettingsMixin",
     "Zoom.MouseMixin"
   ],
