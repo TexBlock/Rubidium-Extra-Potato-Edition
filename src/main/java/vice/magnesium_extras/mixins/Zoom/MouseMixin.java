@@ -58,7 +58,7 @@ public class MouseMixin {
 		method = "turnPlayer",
 		ordinal = 2
 	)
-	private double applyReduceSensitivity() {
+	private double applyReduceSensitivity(double value) {
 		double modifiedMouseSensitivity = this.minecraft.options.sensitivity;
 
 		if (MagnesiumExtrasConfig.lowerZoomSensitivity.get())
@@ -71,9 +71,9 @@ public class MouseMixin {
 		}
 
 		double appliedMouseSensitivity = modifiedMouseSensitivity * 0.6 + 0.2;
-		double g = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
-		this.adjustedG = g;
-		return g;
+		value = appliedMouseSensitivity * appliedMouseSensitivity * appliedMouseSensitivity * 8.0;
+		this.adjustedG = value;
+		return value;
 	}
 	
 	//Extracts the e variable for the cinematic cameras.
