@@ -1,7 +1,6 @@
 package vice.magnesium_extras.mixins.SodiumConfig;
 
 import com.google.common.collect.ImmutableList;
-//import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import me.jellysquid.mods.sodium.client.gui.options.*;
@@ -9,26 +8,19 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatte
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
-//import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import me.jellysquid.mods.sodium.client.gui.options.storage.SodiumOptionsStorage;
-//import net.minecraft.client.GameSettings;
-//import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-//import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
-//import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-//import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 import net.minecraft.client.resources.I18n;
 
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.Objects;
 
 @Mixin(SodiumOptionsGUI.class)
 public class SodiumSettingsMixin
