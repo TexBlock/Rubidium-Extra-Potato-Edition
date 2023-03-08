@@ -156,7 +156,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:ftblibrary-404465:3514173")
     runtimeOnly fg.deobf("curse.maven:ftbteams-404468:3492657")
 
-    annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {

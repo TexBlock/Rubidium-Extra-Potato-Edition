@@ -38,9 +38,7 @@ public class RenderTypeLookupMixin
         else
         {
             Predicate<RenderType> rendertype;
-            //synchronized (RenderTypeLookup.class) {
                 rendertype = blockRenderChecks.get(block.delegate);
-            //}
             cir.setReturnValue(rendertype != null ? rendertype.test(type) : type == RenderType.solid());
         }
     }
@@ -49,9 +47,7 @@ public class RenderTypeLookupMixin
     private static void render(FluidState fluid, RenderType type, CallbackInfoReturnable<Boolean> cir)
     {
         Predicate<RenderType> rendertype;
-        //synchronized (RenderTypeLookup.class) {
         rendertype = fluidRenderChecks.get(fluid.getType().delegate);
-        //}
         cir.setReturnValue(rendertype != null ? rendertype.test(type) : type == RenderType.solid());
     }
 }

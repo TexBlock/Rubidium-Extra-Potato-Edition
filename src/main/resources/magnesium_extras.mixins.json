@@ -5,7 +5,6 @@
   "refmap": "magnesium_extras.refmap.json",
   "mixins": [
     "fog.MixinSodiumWorldRenderer",
-    "performance.MultiDrawChunkRenderBackendMixin",
     "SodiumConfig.SodiumSettingsMixin",
     "Zoom.MouseMixin"
   ],

@@ -202,9 +202,4 @@ public class SodiumSettingsMixin
         );
         pages.add(new OptionPage(I18n.get("extras.extras.options.name"),ImmutableList.copyOf(groups)));
     }
-
-    //@ModifyConstant(method = "advanced", remap = false, constant = @Constant(stringValue = "Advanced"))
-    //private static String ChangeCategoryName(String old) {
-    //    return I18n.get("extras.extras.options.name");
-    //}
 }
