@@ -146,7 +146,6 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:engineers-313866:3390489")
     runtimeOnly fg.deobf("curse.maven:immersive-231951:3497359")
     runtimeOnly fg.deobf("curse.maven:patchouli-306770:3459118")
-    //runtimeOnly fg.deobf("curse.maven:kotrt-543308:3571155")
 
     compileOnly fg.deobf("curse.maven:ftbchunks-314906:3509329")
     compileOnly fg.deobf("curse.maven:ftblibrary-404465:3514173")

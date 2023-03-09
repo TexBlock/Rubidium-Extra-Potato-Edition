@@ -23,14 +23,14 @@ public class MouseMixin {
 	@Final
 	@Shadow
 	private Minecraft minecraft;
-	
+
 	@Final
 	@Shadow
-	private final MouseSmoother smoothTurnX = new MouseSmoother();
-	
+	private MouseSmoother smoothTurnX = new MouseSmoother();
+
 	@Final
 	@Shadow
-	private final MouseSmoother smoothTurnY = new MouseSmoother();
+	private MouseSmoother smoothTurnY = new MouseSmoother();
 
 	@Shadow
 	private double accumulatedDX;
@@ -108,7 +108,6 @@ public class MouseMixin {
 				this.cursorXZoomSmoother.reset();
 			}
 		}
-		
 		return l;
 	}
 	
@@ -174,6 +173,7 @@ public class MouseMixin {
 			cancellable = true,
 			locals = LocalCapture.CAPTURE_FAILHARD
 	)
+	//long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i
 	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i) {
 		if (MagnesiumExtrasConfig.zoomScrolling.get()) {
 			if (MagnesiumExtrasConfig.zoomMode.get().equals(MagnesiumExtrasConfig.ZoomModes.PERSISTENT.toString())) {

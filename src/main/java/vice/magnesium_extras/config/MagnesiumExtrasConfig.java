@@ -27,7 +27,6 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<Boolean> fog;
     public static ConfigValue<Boolean> enableDistanceChecks;
 
-
     // Ok Zoomer
     public static ZoomValues zoomValues = new ZoomValues();
     public static ConfigValue<Boolean> lowerZoomSensitivity;
@@ -49,8 +48,6 @@ public class MagnesiumExtrasConfig
     public static ForgeConfigSpec.BooleanValue darkOverworld;
     public static ForgeConfigSpec.BooleanValue darkDefault;
     public static ForgeConfigSpec.BooleanValue darkNether;
-
-
 
     static
     {

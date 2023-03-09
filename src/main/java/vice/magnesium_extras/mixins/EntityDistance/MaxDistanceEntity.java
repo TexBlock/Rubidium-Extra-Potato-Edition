@@ -7,17 +7,18 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import vice.magnesium_extras.config.EntityListConfig;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 import vice.magnesium_extras.util.DistanceUtility;
+
+import java.util.Objects;
 
 @Mixin(EntityRendererManager.class)
 public class MaxDistanceEntity
 {
-    @Inject(at = @At("HEAD"), method = "shouldRender", cancellable = true)
-    public <E extends Entity> void shouldDoRender(E entity, ClippingHelper clippingHelper, double cameraX, double cameraY, double cameraZ, CallbackInfoReturnable<Boolean> cir)
-    {
-        if (!MagnesiumExtrasConfig.enableDistanceChecks.get())
-            return;
+    @Inject(at = @At("HEAD"), method = "shouldRender")
+    public <E extends Entity> void shouldDoRender(E entity, ClippingHelper clippingHelper, double cameraX, double cameraY, double cameraZ, CallbackInfoReturnable<Boolean> cir) {
+        if (!MagnesiumExtrasConfig.enableDistanceChecks.get() || EntityListConfig.ENTITY_LIST.get().stream().anyMatch(entry -> Objects.equals(entry, Objects.requireNonNull(entity.getType().getRegistryName()).toString()))) return;
 
         if (!DistanceUtility.isEntityWithinDistance(
                 entity,

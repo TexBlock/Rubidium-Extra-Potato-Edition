@@ -24,8 +24,7 @@ import java.util.List;
 
 @Pseudo
 @Mixin(SodiumOptionsGUI.class)
-public abstract class ZoomSettingsPage
-{
+public abstract class ZoomSettingsPage {
 
     @Shadow
     @Final
@@ -36,7 +35,7 @@ public abstract class ZoomSettingsPage
     @Inject(method = "<init>", at = @At("RETURN"))
     private void DynamicLights(Screen prevScreen, CallbackInfo ci)
     {
-        List<OptionGroup> groups = new ArrayList();
+        List<OptionGroup> groups = new ArrayList<>();
 
         OptionImpl<SodiumGameOptions, Boolean> lowerSensitivity = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
                 .setName(I18n.get("extras.zoom.lower_sensitivity.name"))

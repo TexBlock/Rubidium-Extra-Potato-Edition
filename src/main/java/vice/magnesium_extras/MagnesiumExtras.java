@@ -15,6 +15,7 @@ import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -24,6 +25,7 @@ import net.minecraftforge.registries.IRegistryDelegate;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vice.magnesium_extras.config.EntityListConfig;
 import vice.magnesium_extras.config.MagnesiumExtrasConfig;
 import vice.magnesium_extras.features.Zoom.ZoomUtils;
 import vice.magnesium_extras.keybinds.KeyboardInput;
@@ -32,7 +34,7 @@ import vice.magnesium_extras.util.chunks.IChunkClaimProvider;
 
 import java.lang.reflect.Field;
 
-@Mod("magnesium_extras")
+@Mod(MagnesiumExtras.MODID)
 public class MagnesiumExtras
 {
     public static final String MODID = "magnesium_extras";
@@ -44,8 +46,7 @@ public class MagnesiumExtras
         MinecraftForge.EVENT_BUS.register(this);
 
         MagnesiumExtrasConfig.loadConfig(FMLPaths.CONFIGDIR.get().resolve("mgrb_extras.toml"));
-
-        //MinecraftForge.EVENT_BUS.register(this);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EntityListConfig.ENTITY_LIST_CONFIG);
 
         ModLoadingContext.get()
                 .registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));
@@ -59,8 +60,6 @@ public class MagnesiumExtras
         catch (Throwable t) {
             LOGGER.error("Could not retrieve sodiumOptsField");
         }
-
-
     }
 
     private void setup(final FMLCommonSetupEvent event)
