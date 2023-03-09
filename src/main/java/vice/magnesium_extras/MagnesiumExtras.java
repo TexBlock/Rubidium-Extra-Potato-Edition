@@ -46,7 +46,7 @@ public class MagnesiumExtras
         MinecraftForge.EVENT_BUS.register(this);
 
         MagnesiumExtrasConfig.loadConfig(FMLPaths.CONFIGDIR.get().resolve("mgrb_extras.toml"));
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EntityListConfig.ENTITY_LIST_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, EntityListConfig.ENTITY_LIST_CONFIG, "mgrb_extras_entitylist.toml");
 
         ModLoadingContext.get()
                 .registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));

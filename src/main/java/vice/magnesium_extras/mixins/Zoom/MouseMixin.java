@@ -173,7 +173,6 @@ public class MouseMixin {
 			cancellable = true,
 			locals = LocalCapture.CAPTURE_FAILHARD
 	)
-	//long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i
 	private void zoomerOnMouseButton(long window, int button, int action, int mods, CallbackInfo info, boolean bl, int i) {
 		if (MagnesiumExtrasConfig.zoomScrolling.get()) {
 			if (MagnesiumExtrasConfig.zoomMode.get().equals(MagnesiumExtrasConfig.ZoomModes.PERSISTENT.toString())) {
