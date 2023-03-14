@@ -6,7 +6,7 @@ license="LGPL-2.1"
 modId="magnesium_extras" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Magnesium/Rubidium Extras" #mandatory
-credits="TeamDeusVult, TexTrue, TexStudio-i18nProject" #optional
+credits="TeamDeusVult, TexTrue, LocalizedMC" #optional
 authors="Team Potato" #optional
 description='''
 Adds Extra Settings to Magnesium/Rubidium.
